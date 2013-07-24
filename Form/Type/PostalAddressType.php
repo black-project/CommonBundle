@@ -147,6 +147,6 @@ class PostalAddressType extends AbstractType
 
     public function getName()
     {
-        return 'black_person_postaladdress';
+        return 'black_common_postaladdress';
     }
 }
