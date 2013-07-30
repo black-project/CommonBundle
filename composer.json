@@ -1,0 +1,29 @@
+{
+    "name": "black/common-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony BlackCommonBundle",
+    "keywords": ["Common"],
+    "homepage": "http://www.lablackroom.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexandre Balmes",
+            "email": "abalmes@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/framework-bundle": "~2.3",
+        "symfony/form": "~2.3",
+        "doctrine/doctrine-bundle": "1.2.*"
+    },
+    "suggest": {
+        "doctrine/mongodb-odm": "Needed when using mongo implementation",
+        "doctrine/mongodb-odm-bundle": "Needed when using mongo implementation"
+    },
+    "autoload": {
+        "psr-0": { "Black\\CommonBundle": "" }
+    },
+    "target-dir": "Black/CommonBundle"
+}
