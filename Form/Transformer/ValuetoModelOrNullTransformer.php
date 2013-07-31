@@ -42,7 +42,7 @@ class ValuetoModelOrNullTransformer implements DataTransformerInterface
         if(empty($data)) {
             return null;
         } else {
-            return  array('choice' => $data->getId(), 'text' => $data->getName());
+            return $data->getId();
         }
     }
 
@@ -53,10 +53,9 @@ class ValuetoModelOrNullTransformer implements DataTransformerInterface
      */
     public function reverseTransform($data)
     {
-        if ('other' === $data['choice']) {
+        if (null === $data) {
             return null;
         }
-
-        return $this->manager->findOneBy(array('id' => $data['choice']));
+        return $this->manager->getRepository()->findOneBy(array('id' => $data));
     }
 }
