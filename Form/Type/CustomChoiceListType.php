@@ -12,14 +12,36 @@ namespace Black\Bundle\CommonBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\FormBuilderInterface;
+use Black\Bundle\CommonBundle\Form\Transformer\ValuetoModelsOrNullTransformer;
 
 /**
  * EnabledType
  */
 class CustomChoiceListType extends AbstractType
 {
+    /**
+     * @var type 
+     */
     protected $choiceList;
+
+    /**
+     * @var type 
+     */
     protected $choiceListName;
+
+    /**
+     * @var type
+     */
+    protected $manager;
+
+    /**
+     * @param $manager
+     */
+    public function setManager($manager)
+    {
+        $this->manager = $manager;
+    }
 
     /**
      * Constructor
@@ -32,13 +54,28 @@ class CustomChoiceListType extends AbstractType
     }
 
     /**
+     * @param FormBuilderInterface $builder
+     * @param array                $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        if($this->manager !== null) {
+            $builder->addModelTransformer(
+                new ValuetoModelsOrNullTransformer($this->manager)
+             );
+        }
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'choice_list' => $this->choiceList,
-        ));
+        $resolver->setDefaults(
+            array(
+                'choice_list' => $this->choiceList,
+            )
+        );
     }
  
     /**
