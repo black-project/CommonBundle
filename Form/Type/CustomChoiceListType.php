@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Blackengine package.
+ * This file is part of the Black package.
  *
  * (c) Alexandre Balmes <albalmes@gmail.com>
  *
@@ -16,7 +16,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Black\Bundle\CommonBundle\Form\Transformer\ValuetoModelsOrNullTransformer;
 
 /**
- * EnabledType
+ * Class CustomChoiceListType
+ *
+ * @package Black\Bundle\CommonBundle\Form\Type
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class CustomChoiceListType extends AbstractType
 {
@@ -44,13 +48,12 @@ class CustomChoiceListType extends AbstractType
     }
 
     /**
-     * Constructor
-     * 
-     * @param type $choiceList
+     * @param $choiceList
+     * @param $choiceListName
      */
-    public function __construct($choiceList, $choiceListname) {
+    public function __construct($choiceList, $choiceListName) {
         $this->choiceList       = $choiceList;
-        $this->choiceListName   = $choiceListname;
+        $this->choiceListName   = $choiceListName;
     }
 
     /**
