@@ -17,7 +17,11 @@ use Black\Bundle\CommonBundle\Traits\ContactPointEntityTrait;
 use Black\Bundle\CommonBundle\Model\AbstractPostalAddress;
 
 /**
- * PostalAddress
+ * Class PostalAddress
+ *
+ * @package Black\Bundle\CommonBundle\Entity
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 abstract class PostalAddress extends AbstractPostalAddress
 {

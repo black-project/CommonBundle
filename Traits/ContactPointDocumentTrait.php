@@ -14,6 +14,8 @@ namespace Black\Bundle\CommonBundle\Traits;
  * Class ContactPointDocumentTrait
  *
  * @package Black\Bundle\CommonBundle\Traits
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 trait ContactPointDocumentTrait
 {

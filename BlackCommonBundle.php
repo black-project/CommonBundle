@@ -12,6 +12,13 @@ namespace Black\Bundle\CommonBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+/**
+ * Class BlackCommonBundle
+ *
+ * @package Black\Bundle\CommonBundle
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
+ */
 class BlackCommonBundle extends Bundle
 {
 }

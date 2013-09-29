@@ -1,0 +1,13 @@
+black:
+    common:
+        thing:
+            name:
+                label: Nom
+            slug:
+                label: Permalien
+            description:
+                label: Description
+            url:
+                label: Lien
+            sameAs:
+                label: Identique à (lien)

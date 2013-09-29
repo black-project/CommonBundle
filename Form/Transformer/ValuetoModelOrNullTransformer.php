@@ -13,9 +13,11 @@ namespace Black\Bundle\CommonBundle\Form\Transformer;
 use Symfony\Component\Form\DataTransformerInterface;
 
 /**
- * Class ValuetoChoiceOrTextTransformer
+ * Class ValuetoModelOrNullTransformer
  *
- * @package Black\Bundle\MenuBundle\Form\Transformer
+ * @package Black\Bundle\CommonBundle\Form\Transformer
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class ValuetoModelOrNullTransformer implements DataTransformerInterface
 {
@@ -39,7 +41,7 @@ class ValuetoModelOrNullTransformer implements DataTransformerInterface
      */
     public function transform($data)
     {
-        if(empty($data)) {
+        if (empty($data)) {
             return null;
         } else {
             return $data->getId();
@@ -56,6 +58,7 @@ class ValuetoModelOrNullTransformer implements DataTransformerInterface
         if (null === $data) {
             return null;
         }
+
         return $this->manager->getRepository()->findOneBy(array('id' => $data));
     }
 }

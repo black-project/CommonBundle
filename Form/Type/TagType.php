@@ -47,6 +47,6 @@ class TagType extends AbstractType
      */
     public function getName()
     {
-        return 'tag';
+        return 'black_common_tag';
     }
 }

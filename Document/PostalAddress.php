@@ -18,7 +18,13 @@ use Black\Bundle\CommonBundle\Traits\ContactPointDocumentTrait;
 use Black\Bundle\CommonBundle\Model\AbstractPostalAddress;
 
 /**
+ * Class PostalAddress
+ *
  * @ODM\EmbeddedDocument
+ *
+ * @package Black\Bundle\CommonBundle\Document
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class PostalAddress extends AbstractPostalAddress
 {

@@ -17,6 +17,7 @@ use Symfony\Component\Form\DataTransformerInterface;
 /**
  * Class TextToTagTransformer
  *
+ * @package Black\Bundle\CommonBundle\Form\Transformer
  * @author  Alexandre Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */

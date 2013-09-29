@@ -14,6 +14,8 @@ namespace Black\Bundle\CommonBundle\Traits;
  * Class ContactPointTrait
  *
  * @package Black\Bundle\CommonBundle\Traits
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 trait ContactPointTrait
 {

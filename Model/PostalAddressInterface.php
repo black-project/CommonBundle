@@ -14,6 +14,8 @@ namespace Black\Bundle\CommonBundle\Model;
  * Class PostalAddressInterface
  *
  * @package Black\Bundle\CommonBundle\Model
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 interface PostalAddressInterface
 {

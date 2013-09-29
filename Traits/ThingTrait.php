@@ -11,6 +11,8 @@ namespace Black\Bundle\CommonBundle\Traits;
  * Class ThingTrait
  *
  * @package Black\Bundle\CommonBundle\Traits
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 trait ThingTrait
 {
@@ -84,6 +86,22 @@ trait ThingTrait
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * @param $sameAs
+     */
+    public function setSameAs($sameAs)
+    {
+        $this->sameAs = $sameAs;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSameAs()
+    {
+        return $this->sameAs;
     }
 
     /**

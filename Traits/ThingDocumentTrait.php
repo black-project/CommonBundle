@@ -16,6 +16,8 @@ use Gedmo\Timestampable\Traits\TimestampableDocument;
  * Class ThingDocumentTrait
  *
  * @package Black\Bundle\CommonBundle\Traits
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 trait ThingDocumentTrait
 {
@@ -42,6 +44,12 @@ trait ThingDocumentTrait
      * @Assert\Type(type="string")
      */
     protected $description;
+
+    /**
+     * @ODM\String
+     * @Assert\Url
+     */
+    protected $sameAs;
 
     /**
      * @ODM\String

@@ -10,10 +10,14 @@
  */
 namespace Black\Bundle\CommonBundle\Model;
 
+use \Symfony\Component\Intl\Intl;
+
 /**
  * Class AbstractPostalAddress
  *
  * @package Black\Bundle\CommonBundle\Model
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 abstract class AbstractPostalAddress implements PostalAddressInterface
 {
@@ -222,7 +226,7 @@ abstract class AbstractPostalAddress implements PostalAddressInterface
      */
     public function getAddressCountryLocale($locale = 'en')
     {
-        $c = \Symfony\Component\Locale\Locale::getDisplayCountries($locale);
+        $c = Intl::getRegionBundle()->getCountryNames($locale);
         return array_key_exists($this->addressCountry, $c)? $c[$this->addressCountry]: $this->addressCountry;
     }
 

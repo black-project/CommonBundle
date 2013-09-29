@@ -6,7 +6,11 @@
 
     <services>
         <service id="black_admin.form.type.tag" class="Black\Bundle\CommonBundle\Form\Type\TagType">
-            <tag name="form.type" alias="tag" />
+            <tag name="form.type" alias="black_common_tag" />
+        </service>
+
+        <service id="black_admin.form.type.thing" class="Black\Bundle\CommonBundle\Form\Type\ThingType">
+            <tag name="form.type" alias="black_common_thing" />
         </service>
     </services>
 </container>

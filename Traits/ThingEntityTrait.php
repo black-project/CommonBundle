@@ -15,9 +15,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Class ThingDocumentTrait
+ * Class ThingEntityTrait
  *
  * @package Black\Bundle\CommonBundle\Traits
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 trait ThingEntityTrait
 {
@@ -44,6 +46,12 @@ trait ThingEntityTrait
      * @Assert\Type(type="string")
      */
     protected $description;
+
+    /**
+     * @ORM\Column(name="sameAs", type="text", nullable=true)
+     * @Assert\Url
+     */
+    protected $sameAs;
 
     /**
      * @ORM\Column(name="url", type="text", nullable=true)

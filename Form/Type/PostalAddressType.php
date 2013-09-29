@@ -19,6 +19,8 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
  * Class PostalAddressType
  *
  * @package Black\Bundle\CommonBundle\Form\Type
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class PostalAddressType extends AbstractType
 {
@@ -52,82 +54,52 @@ class PostalAddressType extends AbstractType
         //$builder->addEventSubscriber($subscriber);
 
         $builder
-            ->add(
-                'contactType',
-                'choice',
-                array(
+            ->add('contactType', 'choice', array(
                     'empty_value'       => 'person.admin.postalAddress.type.empty',
                     'label'             => 'person.admin.postalAddress.type.text',
                     'choice_list'       => $this->contact
                 )
             )
-            ->add(
-                'name',
-                'text',
-                array(
+            ->add('name', 'text',  array(
                     'label'         => 'person.admin.postalAddress.name.text'
                 )
             )
-            ->add(
-                'description',
-                'text',
-                array(
+            ->add('description', 'text', array(
                     'label'         => 'person.admin.postalAddress.description.text',
                     'required'      => false
                 )
             )
-            ->add(
-                'streetAddress',
-                'text',
-                array(
+            ->add('streetAddress', 'text', array(
                     'label'         => 'person.admin.postalAddress.address.street.text',
                     'required'      => false
                 )
             )
-            ->add(
-                'complementaryStreetAddress',
-                'text',
-                array(
+            ->add('complementaryStreetAddress', 'text', array(
                     'label'         => 'person.admin.postalAddress.address.complementary.text',
                     'required'      => false
                 )
             )
-            ->add(
-                'postalCode',
-                'text',
-                array(
+            ->add('postalCode', 'text', array(
                     'label'         => 'person.admin.postalAddress.address.postal.text',
                     'required'      => false
                 )
             )
-            ->add(
-                'postOfficeBoxNumber',
-                'text',
-                array(
+            ->add('postOfficeBoxNumber', 'text', array(
                     'label'         => 'person.admin.postalAddress.address.box.text',
                     'required'      => false
                 )
             )
-            ->add(
-                'addressLocality',
-                'text',
-                array(
+            ->add('addressLocality', 'text', array(
                     'label'         => 'person.admin.postalAddress.address.locality.text',
                     'required'      => false
                 )
             )
-            ->add(
-                'addressRegion',
-                'text',
-                array(
+            ->add('addressRegion', 'text', array(
                     'label'         => 'person.admin.postalAddress.address.region.text',
                     'required'      => false
                 )
             )
-            ->add(
-                'addressCountry',
-                'country',
-                array(
+            ->add('addressCountry', 'country', array(
                     'label'         => 'person.admin.postalAddress.address.country.text',
                     'empty_value'   => 'person.admin.postalAddress.address.country.empty',
                     'required'      => false
@@ -139,8 +111,9 @@ class PostalAddressType extends AbstractType
     {
         $resolver->setDefaults(
             array(
-                'data_class'    => $this->class,
-                'intention'     => 'postal_address_form'
+                'data_class'            => $this->class,
+                'intention'             => 'postal_address_form',
+                'translation_domain'    => 'form'
             )
         );
     }

@@ -17,6 +17,8 @@ use Symfony\Component\HttpFoundation\Request;
  * Class AddressList
  *
  * @package Black\Bundle\CommonBundle\Form\ChoiceList
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class AddressList extends LazyChoiceList
 {
@@ -44,6 +46,7 @@ class AddressList extends LazyChoiceList
            'W' => 'person.admin.postalAddress.type.choice.work',
            'O' => 'person.admin.postalAddress.type.choice.other'
         );
+
         $choices = new SimpleChoiceList($array);
 
         return $choices;

@@ -15,7 +15,9 @@ use Symfony\Component\Form\DataTransformerInterface;
 /**
  * Class ValuetoChoiceOrTextTransformer
  *
- * @package Black\Bundle\MenuBundle\Form\Transformer
+ * @package Black\Bundle\CommonBundle\Form\Transformer
+ * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class ValuetoChoiceOrTextTransformer implements DataTransformerInterface
 {
