@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Blackengine package.
+ * This file is part of the Black package.
  *
  * (c) Alexandre Balmes <albalmes@gmail.com>
  *
@@ -12,6 +12,8 @@ namespace Black\Bundle\CommonBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\FormBuilderInterface;
+use Black\Bundle\CommonBundle\Form\Transformer\ValuetoModelsOrNullTransformer;
 
 /**
  * Class CustomChoiceListType
@@ -33,6 +35,11 @@ class CustomChoiceListType extends AbstractType
     protected $choiceListName;
 
     /**
+     * @var
+     */
+    protected $manager;
+
+    /**
      * @param $choiceList
      * @param $choiceListName
      */
@@ -42,13 +49,36 @@ class CustomChoiceListType extends AbstractType
     }
 
     /**
+     * @param FormBuilderInterface $builder
+     * @param array                $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        if($this->manager !== null) {
+            $builder->addModelTransformer(
+                new ValuetoModelsOrNullTransformer($this->manager)
+            );
+        }
+    }
+
+    /**
+     * @param $manager
+     */
+    public function setManager($manager)
+    {
+        $this->manager = $manager;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'choice_list' => $this->choiceList,
-        ));
+        $resolver->setDefaults(
+            array(
+                'choice_list' => $this->choiceList,
+            )
+        );
     }
  
     /**

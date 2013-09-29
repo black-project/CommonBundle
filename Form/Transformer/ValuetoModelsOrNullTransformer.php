@@ -24,7 +24,7 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
     /**
      * @var
      */
-    private $manager;
+    protected $manager;
 
     /**
      * @param ObjectManager $manager
@@ -43,14 +43,21 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
     {
         if (empty($data)) {
             return null;
-        } else {
+        } elseif (is_array($data) || is_object($data)) {
+
             $collection = array();
 
-            foreach($data as $model) {
+            if (in_array('getId', get_class_methods($data))) {
+                return $data->getId();
+            }
+
+            foreach ($data as $model) {
                 $collection[] = $model->getId();
             }
 
             return $collection;
+        } else {
+            return $data;
         }
     }
 
@@ -61,12 +68,20 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
      */
     public function reverseTransform($data)
     {
-        $collection = array();
+        if (null === $data) {
+            return null;
+        } elseif (is_array($data) || is_object($data)) {
 
-        foreach($data as $id) {
-            $collection[] = $this->manager->getRepository()->findOneBy(array('id' => $id));
+            $collection = array();
+
+            foreach ($data as $id) {
+                $collection[] = $this->manager->getRepository()->findOneBy(array('id' => $id));
+            }
+
+            return $collection;
+        } else {
+            $model = $this->manager->getRepository()->findOneBy(array('id' => $data));
+            return  $model;
         }
-
-        return $collection;
     }
 }
