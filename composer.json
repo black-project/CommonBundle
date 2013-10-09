@@ -16,7 +16,11 @@
         "php": ">=5.4.0",
         "symfony/framework-bundle": "~2.3",
         "symfony/form": "~2.3",
-        "doctrine/doctrine-bundle": "1.2.*"
+        "doctrine/doctrine-bundle": "1.2.*",
+        "jms/security-extra-bundle": "dev-master",
+        "jms/di-extra-bundle": "dev-master",
+        "sonata-project/intl-bundle": "dev-master",
+        "stof/doctrine-extensions-bundle": "dev-master"
     },
     "suggest": {
         "doctrine/mongodb-odm": "Needed when using mongo implementation",
