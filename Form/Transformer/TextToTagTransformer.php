@@ -13,7 +13,6 @@ namespace Black\Bundle\CommonBundle\Form\Transformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
 
-
 /**
  * Class TextToTagTransformer
  *

@@ -1,11 +1,15 @@
 <?php
 
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * This file is part of the Black package.
+ *
+ * (c) Alexandre Balmes <albalmes@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-namespace Black\Bundle\CommonBundle\Traits;
 
+namespace Black\Bundle\CommonBundle\Traits;
 
 /**
  * Class ThingTrait
@@ -17,8 +21,6 @@ namespace Black\Bundle\CommonBundle\Traits;
 trait ThingTrait
 {
     /**
-     * Set name
-     *
      * @param string $name
      *
      * @return $this
@@ -31,8 +33,6 @@ trait ThingTrait
     }
 
     /**
-     * Get name
-     *
      * @return string $name
      */
     public function getName()
@@ -41,8 +41,6 @@ trait ThingTrait
     }
 
     /**
-     * Set slug
-     *
      * @param string $slug
      *
      * @return $this
@@ -55,8 +53,6 @@ trait ThingTrait
     }
 
     /**
-     * Get slug
-     *
      * @return string $slug
      */
     public function getSlug()
@@ -65,8 +61,6 @@ trait ThingTrait
     }
 
     /**
-     * Set description
-     *
      * @param string $description
      *
      * @return $this
@@ -79,8 +73,6 @@ trait ThingTrait
     }
 
     /**
-     * Get description
-     *
      * @return string $description
      */
     public function getDescription()
@@ -105,8 +97,6 @@ trait ThingTrait
     }
 
     /**
-     * Set url
-     *
      * @param string $url
      *
      * @return $this
@@ -119,8 +109,6 @@ trait ThingTrait
     }
 
     /**
-     * Get url
-     *
      * @return string $url
      */
     public function getUrl()
