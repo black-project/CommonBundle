@@ -11,6 +11,8 @@
 
 namespace Black\Bundle\CommonBundle\Traits;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Class PostalAddressEntityTrait
  *
@@ -21,7 +23,34 @@ namespace Black\Bundle\CommonBundle\Traits;
 trait PostalAddressEntityTrait
 {
     use PostalAddressTrait;
-    
+
+    /**
+     * @ORM\Column(name="contact_type", type="string", length=255, nullable=true)
+     * @Assert\Choice(callback = "getType")
+     */
+    protected $contactType;
+
+    /**
+     * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\Length(max="255")
+     * @Assert\Type(type="string")
+     */
+    protected $name;
+
+    /**
+     * @ORM\Column(length=255, unique=true)
+     * @Assert\Length(max="255")
+     * @Assert\Type(type="string")
+     * @Gedmo\Slug(fields={"name"})
+     */
+    protected $slug;
+
+    /**
+     * @ORM\Column(name="description", type="text", nullable=true)
+     * @Assert\Type(type="string")
+     */
+    protected $description;
+
     /**
      * @ORM\Column(name="street_address", type="string", nullable=true)
      * @Assert\Type(type="string")

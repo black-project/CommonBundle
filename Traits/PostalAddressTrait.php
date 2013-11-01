@@ -21,6 +21,94 @@ namespace Black\Bundle\CommonBundle\Traits;
 trait PostalAddressTrait
 {
     /**
+     * @return array
+     */
+    public function getType()
+    {
+        return array('P', 'H', 'W', 'O');
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return string $name
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $slug
+     *
+     * @return $this
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return string $slug
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return string $description
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param $contactType
+     *
+     * @return $this
+     */
+    public function setContactType($contactType)
+    {
+        $this->contactType = $contactType;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContactType()
+    {
+        return $this->contactType;
+    }
+
+    /**
      * @param $streetAddress
      *
      * @return $this
@@ -138,6 +226,17 @@ trait PostalAddressTrait
     public function getAddressCountry()
     {
         return $this->addressCountry;
+    }
+
+    /**
+     * @param string $locale
+     *
+     * @return mixed
+     */
+    public function getAddressCountryLocale($locale = 'en')
+    {
+        $c = Intl::getRegionBundle()->getCountryNames($locale);
+        return array_key_exists($this->addressCountry, $c)? $c[$this->addressCountry]: $this->addressCountry;
     }
 
     /**

@@ -75,11 +75,9 @@ class CustomChoiceListType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(
-            array(
+        $resolver->setDefaults(array(
                 'choice_list' => $this->choiceList,
-            )
-        );
+            ));
     }
  
     /**

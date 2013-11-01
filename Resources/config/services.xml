@@ -18,5 +18,9 @@
             <tag name="form.type" alias="double_box" />
         </service>
 
+        <service id="black_common.image_type_extension" class="Black\Bundle\CommonBundle\Form\Extension\ImageTypeExtension" public="true">
+            <tag name="form.type_extension" alias="file" />
+        </service>
+
     </services>
 </container>
