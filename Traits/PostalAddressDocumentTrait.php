@@ -14,53 +14,70 @@ namespace Black\Bundle\CommonBundle\Traits;
 /**
  * Class PostalAddressDocumentTrait
  *
+ * The mailing address
+ *
  * @package Black\Bundle\CommonBundle\Traits
  * @author  Alexandre Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 trait PostalAddressDocumentTrait
 {
+    use ContactPointDocumentTrait;
     use PostalAddressTrait;
-    
-    /**
-     * @ODM\String
-     * @Assert\Type(type="string")
-     */
-    protected $streetAddress;
 
     /**
-     * @ODM\String
-     * @Assert\Type(type="string")
-     */
-    protected $complementaryStreetAddress;
-
-    /**
-     * @ODM\String
-     * @Assert\Type(type="string")
-     */
-    protected $postalCode;
-
-    /**
-     * @ODM\String
-     * @Assert\Type(type="string")
-     */
-    protected $postOfficeBoxNumber;
-
-    /**
+     * The country
+     *
      * @ODM\String
      * @Assert\Country
      */
     protected $addressCountry;
 
     /**
+     * The locality
+     *
      * @ODM\String
      * @Assert\Type(type="string")
      */
     protected $addressLocality;
 
     /**
+     * The region
+     *
      * @ODM\String
      * @Assert\Type(type="string")
      */
     protected $addressRegion;
+
+    /**
+     * The complementary street address
+     *
+     * @ODM\String
+     * @Assert\Type(type="string")
+     */
+    protected $complementaryStreetAddress;
+
+    /**
+     * The postal code
+     *
+     * @ODM\String
+     * @Assert\Type(type="string")
+     */
+    protected $postalCode;
+
+    /**
+     * The post offce box number for PO box addresses
+     *
+     * @ODM\String
+     * @Assert\Type(type="string")
+     */
+    protected $postOfficeBoxNumber;
+
+    /**
+     * The street address
+     *
+     * @ODM\String
+     * @Assert\Type(type="string")
+     */
+    protected $streetAddress;
 }

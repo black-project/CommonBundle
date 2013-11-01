@@ -63,25 +63,13 @@ class CustomChoiceListType extends AbstractType
     }
 
     /**
-     * @param $manager
-     */
-    public function setManager($manager)
-    {
-        $this->manager = $manager;
-    }
-
-    /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function getName()
     {
-        $resolver->setDefaults(
-            array(
-                'choice_list' => $this->choiceList,
-            )
-        );
+        return $this->choiceListName;
     }
- 
+
     /**
      * {@inheritdoc}
      */
@@ -89,12 +77,22 @@ class CustomChoiceListType extends AbstractType
     {
         return 'choice';
     }
- 
+
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return $this->choiceListName;
+        $resolver->setDefaults(array(
+                'choice_list' => $this->choiceList,
+            ));
+    }
+
+    /**
+     * @param $manager
+     */
+    public function setManager($manager)
+    {
+        $this->manager = $manager;
     }
 }

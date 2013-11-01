@@ -43,10 +43,10 @@ class AddressList extends LazyChoiceList
     protected function loadChoiceList()
     {
         $array = array(
-           'P' => 'person.admin.postalAddress.type.choice.principal',
-           'H' => 'person.admin.postalAddress.type.choice.home',
-           'W' => 'person.admin.postalAddress.type.choice.work',
-           'O' => 'person.admin.postalAddress.type.choice.other'
+           'P' => 'black.common.choice.address.principal',
+           'H' => 'black.common.choice.address.home',
+           'W' => 'black.common.choice.address.work',
+           'O' => 'black.common.choice.address.other'
         );
 
         $choices = new SimpleChoiceList($array);

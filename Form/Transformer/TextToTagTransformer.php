@@ -27,13 +27,13 @@ class TextToTagTransformer implements DataTransformerInterface
      *
      * @return mixed|void
      */
-    public function transform($keywords)
+    public function reverseTransform($keywords)
     {
-        if (null === $keywords) {
-            return;
+        if (!$keywords) {
+            return array();
         }
 
-        $keywords = implode(',', $keywords);
+        $keywords = explode(',', $keywords);
 
         return $keywords;
     }
@@ -43,13 +43,13 @@ class TextToTagTransformer implements DataTransformerInterface
      *
      * @return mixed|void
      */
-    public function reverseTransform($keywords)
+    public function transform($keywords)
     {
-        if (!$keywords) {
-            return array();
+        if (null === $keywords) {
+            return;
         }
 
-        $keywords = explode(',', $keywords);
+        $keywords = implode(',', $keywords);
 
         return $keywords;
     }

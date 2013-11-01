@@ -14,12 +14,54 @@ namespace Black\Bundle\CommonBundle\Traits;
 /**
  * Class ContactPointTrait
  *
+ * A contact point—for example, a Customer Complaints department
+ *
  * @package Black\Bundle\CommonBundle\Traits
  * @author  Alexandre Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 trait ContactPointTrait
 {
+    /**
+     * @return mixed
+     */
+    public function getContactType()
+    {
+        return $this->contactType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFaxNumber()
+    {
+        return $this->faxNumber;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMobile()
+    {
+        return $this->mobile;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
     /**
      * @return array
      */
@@ -41,14 +83,6 @@ trait ContactPointTrait
     }
 
     /**
-     * @return mixed
-     */
-    public function getContactType()
-    {
-        return $this->contactType;
-    }
-
-    /**
      * @param $email
      *
      * @return $this
@@ -58,14 +92,6 @@ trait ContactPointTrait
         $this->email = $email;
 
         return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
     }
 
     /**
@@ -81,34 +107,6 @@ trait ContactPointTrait
     }
 
     /**
-     * @return mixed
-     */
-    public function getFaxNumber()
-    {
-        return $this->faxNumber;
-    }
-
-    /**
-     * @param $telephone
-     *
-     * @return $this
-     */
-    public function setTelephone($telephone)
-    {
-        $this->telephone = $telephone;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTelephone()
-    {
-        return $this->telephone;
-    }
-
-    /**
      * @param $mobile
      *
      * @return $this
@@ -121,10 +119,14 @@ trait ContactPointTrait
     }
 
     /**
-     * @return mixed
+     * @param $telephone
+     *
+     * @return $this
      */
-    public function getMobile()
+    public function setTelephone($telephone)
     {
-        return $this->mobile;
+        $this->telephone = $telephone;
+
+        return $this;
     }
 }
