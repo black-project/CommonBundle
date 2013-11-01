@@ -53,5 +53,11 @@ These Traits are explicit and available for Doctrine ORM and Doctrine MongoDB. I
 the ImageEntityTrait, don't forget to add the annotation `@ORM\HasLifecycleCallbacks` in your class !
 
 
+### FormType
+
+#### Thing
+We have a ThingTrait so... We have a ThingType! I hope he save you lot of time.
+
+
 
 

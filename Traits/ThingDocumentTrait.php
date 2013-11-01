@@ -16,6 +16,8 @@ use Gedmo\Timestampable\Traits\TimestampableDocument;
 /**
  * Class ThingDocumentTrait
  *
+ * The most generic type of item.
+ *
  * @package Black\Bundle\CommonBundle\Traits
  * @author  Alexandre Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
@@ -26,6 +28,16 @@ trait ThingDocumentTrait
     use ThingTrait;
 
     /**
+     * A short description of the item
+     *
+     * @ODM\String
+     * @Assert\Type(type="string")
+     */
+    protected $description;
+
+    /**
+     * The name of the item
+     *
      * @ODM\String
      * @Assert\Length(max="255")
      * @Assert\Type(type="string")
@@ -33,6 +45,8 @@ trait ThingDocumentTrait
     protected $name;
 
     /**
+     * The slug of the item
+     *
      * @ODM\String
      * @Assert\Length(max="255")
      * @Assert\Type(type="string")
@@ -41,18 +55,8 @@ trait ThingDocumentTrait
     protected $slug;
 
     /**
-     * @ODM\String
-     * @Assert\Type(type="string")
-     */
-    protected $description;
-
-    /**
-     * @ODM\String
-     * @Assert\Url
-     */
-    protected $sameAs;
-
-    /**
+     * URL of the item
+     *
      * @ODM\String
      * @Assert\Url
      */

@@ -14,212 +14,14 @@ namespace Black\Bundle\CommonBundle\Traits;
 /**
  * Class PostalAddressTrait
  *
+ * The mailing address
+ *
  * @package Black\Bundle\CommonBundle\Traits
  * @author  Alexandre Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 trait PostalAddressTrait
 {
-    /**
-     * @return array
-     */
-    public function getType()
-    {
-        return array('P', 'H', 'W', 'O');
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @return string $name
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $slug
-     *
-     * @return $this
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * @return string $slug
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * @return string $description
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param $contactType
-     *
-     * @return $this
-     */
-    public function setContactType($contactType)
-    {
-        $this->contactType = $contactType;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getContactType()
-    {
-        return $this->contactType;
-    }
-
-    /**
-     * @param $streetAddress
-     *
-     * @return $this
-     */
-    public function setStreetAddress($streetAddress)
-    {
-        $this->streetAddress = $streetAddress;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStreetAddress()
-    {
-        return $this->streetAddress;
-    }
-
-    /**
-     * @param $complementaryStreetAddress
-     *
-     * @return $this
-     */
-    public function setComplementaryStreetAddress($complementaryStreetAddress)
-    {
-        $this->complementaryStreetAddress = $complementaryStreetAddress;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getComplementaryStreetAddress()
-    {
-        return $this->complementaryStreetAddress;
-    }
-
-    /**
-     * @param $postalCode
-     *
-     * @return $this
-     */
-    public function setPostalCode($postalCode)
-    {
-        $this->postalCode = $postalCode;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPostalCode()
-    {
-        return $this->postalCode;
-    }
-
-    /**
-     * @param $postOfficeBoxNumber
-     *
-     * @return $this
-     */
-    public function setPostOfficeBoxNumber($postOfficeBoxNumber)
-    {
-        $this->postOfficeBoxNumber = $postOfficeBoxNumber;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPostOfficeBoxNumber()
-    {
-        return $this->postOfficeBoxNumber;
-    }
-
-    /**
-     * @param $addressRegion
-     *
-     * @return $this
-     */
-    public function setAddressRegion($addressRegion)
-    {
-        $this->addressRegion = $addressRegion;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAddressRegion()
-    {
-        return $this->addressRegion;
-    }
-
-    /**
-     * @param $addressCountry
-     *
-     * @return $this
-     */
-    public function setAddressCountry($addressCountry)
-    {
-        $this->addressCountry = $addressCountry;
-
-        return $this;
-    }
-
     /**
      * @return mixed
      */
@@ -240,6 +42,66 @@ trait PostalAddressTrait
     }
 
     /**
+     * @return mixed
+     */
+    public function getAddressLocality()
+    {
+        return $this->addressLocality;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddressRegion()
+    {
+        return $this->addressRegion;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getComplementaryStreetAddress()
+    {
+        return $this->complementaryStreetAddress;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPostalCode()
+    {
+        return $this->postalCode;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPostOfficeBoxNumber()
+    {
+        return $this->postOfficeBoxNumber;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStreetAddress()
+    {
+        return $this->streetAddress;
+    }
+
+    /**
+     * @param $addressCountry
+     *
+     * @return $this
+     */
+    public function setAddressCountry($addressCountry)
+    {
+        $this->addressCountry = $addressCountry;
+
+        return $this;
+    }
+
+    /**
      * @param $addressLocality
      *
      * @return $this
@@ -252,10 +114,62 @@ trait PostalAddressTrait
     }
 
     /**
-     * @return mixed
+     * @param $addressRegion
+     *
+     * @return $this
      */
-    public function getAddressLocality()
+    public function setAddressRegion($addressRegion)
     {
-        return $this->addressLocality;
+        $this->addressRegion = $addressRegion;
+
+        return $this;
+    }
+
+    /**
+     * @param $complementaryStreetAddress
+     *
+     * @return $this
+     */
+    public function setComplementaryStreetAddress($complementaryStreetAddress)
+    {
+        $this->complementaryStreetAddress = $complementaryStreetAddress;
+
+        return $this;
+    }
+
+    /**
+     * @param $postalCode
+     *
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->postalCode = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * @param $postOfficeBoxNumber
+     *
+     * @return $this
+     */
+    public function setPostOfficeBoxNumber($postOfficeBoxNumber)
+    {
+        $this->postOfficeBoxNumber = $postOfficeBoxNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param $streetAddress
+     *
+     * @return $this
+     */
+    public function setStreetAddress($streetAddress)
+    {
+        $this->streetAddress = $streetAddress;
+
+        return $this;
     }
 }

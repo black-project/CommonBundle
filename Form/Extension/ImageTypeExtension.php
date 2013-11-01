@@ -26,6 +26,9 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
  */
 class ImageTypeExtension extends AbstractTypeExtension
 {
+    /**
+     * @return string
+     */
     public function getExtendedType()
     {
         return 'file';

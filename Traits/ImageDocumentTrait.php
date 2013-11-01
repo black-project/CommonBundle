@@ -17,6 +17,8 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 /**
  * Class ImageDocumentTrait
  *
+ * Add an image to your item
+ *
  * @package Black\Bundle\CommonBundle\Traits
  * @author  Alexandre Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
@@ -28,15 +30,27 @@ trait ImageDocumentTrait
     /**
      * @Assert\Image(maxSize="2M")
      * @Assert\File(maxSize="6000000")
+     *
+     * @access protected
+     *
+     * {@inheritdoc}
      */
     protected $image;
 
     /**
      * @ODM\String
+     *
+     * @access protected
+     *
+     * {@inheritdoc}
      */
     protected $path;
 
     /**
+     * Generate a random filename for the image uploaded
+     *
+     * @access public
+     *
      * @ODM\PrePersist()
      * @ODM\PreUpdate()
      */
@@ -48,6 +62,24 @@ trait ImageDocumentTrait
     }
 
     /**
+     * Unlink the current image on the filesystem
+     *
+     * @access public
+     *
+     * @ODM\PostRemove()
+     */
+    public function removeUpload()
+    {
+        if ($image = $this->getAbsolutePath()) {
+            unlink($image);
+        }
+    }
+
+    /**
+     * Move the image from the temporary dir to the definitive dir
+     *
+     * @access public
+     *
      * @ODM\PostPersist()
      * @ODM\PostUpdate()
      */
@@ -65,15 +97,5 @@ trait ImageDocumentTrait
         }
 
         $this->image = null;
-    }
-
-    /**
-     * @ODM\PostRemove()
-     */
-    public function removeUpload()
-    {
-        if ($image = $this->getAbsolutePath()) {
-            unlink($image);
-        }
     }
 } 

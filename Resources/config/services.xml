@@ -10,10 +10,6 @@
             <tag name="form.type" alias="black_common_tag" />
         </service>
 
-        <service id="black_admin.form.type.thing" class="Black\Bundle\CommonBundle\Form\Type\ThingType">
-            <tag name="form.type" alias="black_common_thing" />
-        </service>
-
         <service id="black_common.form.type.double_box" class="Black\Bundle\CommonBundle\Form\Type\DoubleBoxType" public="true">
             <tag name="form.type" alias="double_box" />
         </service>

@@ -18,6 +18,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * Class ThingEntityTrait
  *
+ * The most generic type of item.
+ *
  * @package Black\Bundle\CommonBundle\Traits
  * @author  Alexandre Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
@@ -28,6 +30,16 @@ trait ThingEntityTrait
     use ThingTrait;
 
     /**
+     * A short description of the item
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     * @Assert\Type(type="string")
+     */
+    protected $description;
+
+    /**
+     * The name of the item
+     *
      * @ORM\Column(name="name", type="string", length=255)
      * @Assert\Length(max="255")
      * @Assert\Type(type="string")
@@ -35,6 +47,8 @@ trait ThingEntityTrait
     protected $name;
 
     /**
+     * The slug of the item
+     *
      * @ORM\Column(length=255, unique=true)
      * @Assert\Length(max="255")
      * @Assert\Type(type="string")
@@ -43,18 +57,8 @@ trait ThingEntityTrait
     protected $slug;
 
     /**
-     * @ORM\Column(name="description", type="text", nullable=true)
-     * @Assert\Type(type="string")
-     */
-    protected $description;
-
-    /**
-     * @ORM\Column(name="sameAs", type="text", nullable=true)
-     * @Assert\Url
-     */
-    protected $sameAs;
-
-    /**
+     * URL of the item
+     *
      * @ORM\Column(name="url", type="text", nullable=true)
      * @Assert\Url
      */

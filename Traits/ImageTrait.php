@@ -17,6 +17,8 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 /**
  * Class ImageTrait
  *
+ * Add an image to your item
+ *
  * @package Black\Bundle\CommonBundle\Traits
  * @author  Alexandre Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
@@ -24,9 +26,67 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 trait ImageTrait
 {
     /**
+     * Temporary path for the image
+     *
      * @var
      */
     protected $temp;
+
+    /**
+     * Return the absolute path
+     *
+     * @return null|string
+     */
+    protected function getAbsolutePath()
+    {
+        return null === $this->path ? null : $this->getUploadRootDir() . '/' . $this->path;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Return the upload dir
+     *
+     * @return string
+     */
+    protected function getUploadDir()
+    {
+        return 'uploads';
+    }
+
+    /**
+     * Return the absolute upload dir
+     *
+     * @return string
+     */
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../../../../web/' . $this->getUploadDir();
+    }
+
+    /**
+     * Return the web relative dir
+     *
+     * @return null|string
+     */
+    protected function getWebPath()
+    {
+        return null === $this->path ? null : $this->getUploadDir() . '/' . $this->path;
+    }
 
     /**
      * @param UploadedFile $image
@@ -48,14 +108,6 @@ trait ImageTrait
     }
 
     /**
-     * @return mixed
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
      * @param $path
      *
      * @return $this
@@ -65,45 +117,5 @@ trait ImageTrait
         $this->path = $path;
 
         return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPath()
-    {
-        return $this->path;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getAbsolutePath()
-    {
-        return null === $this->path ? null : $this->getUploadRootDir() . '/' . $this->path;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getWebPath()
-    {
-        return null === $this->path ? null : $this->getUploadDir() . '/' . $this->path;
-    }
-
-    /**
-     * @return string
-     */
-    protected function getUploadRootDir()
-    {
-        return __DIR__ . '/../../../../../../../web/' . $this->getUploadDir();
-    }
-
-    /**
-     * @return string
-     */
-    protected function getUploadDir()
-    {
-        return 'uploads';
     }
 } 

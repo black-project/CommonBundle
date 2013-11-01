@@ -21,15 +21,11 @@ namespace Black\Bundle\CommonBundle\Traits;
 trait ThingTrait
 {
     /**
-     * @param string $name
-     *
-     * @return $this
+     * @return string $description
      */
-    public function setName($name)
+    public function getDescription()
     {
-        $this->name = $name;
-
-        return $this;
+        return $this->description;
     }
 
     /**
@@ -41,23 +37,19 @@ trait ThingTrait
     }
 
     /**
-     * @param string $slug
-     *
-     * @return $this
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
      * @return string $slug
      */
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * @return string $url
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 
     /**
@@ -73,27 +65,27 @@ trait ThingTrait
     }
 
     /**
-     * @return string $description
+     * @param string $name
+     *
+     * @return $this
      */
-    public function getDescription()
+    public function setName($name)
     {
-        return $this->description;
+        $this->name = $name;
+
+        return $this;
     }
 
     /**
-     * @param $sameAs
+     * @param string $slug
+     *
+     * @return $this
      */
-    public function setSameAs($sameAs)
+    public function setSlug($slug)
     {
-        $this->sameAs = $sameAs;
-    }
+        $this->slug = $slug;
 
-    /**
-     * @return mixed
-     */
-    public function getSameAs()
-    {
-        return $this->sameAs;
+        return $this;
     }
 
     /**
@@ -106,13 +98,5 @@ trait ThingTrait
         $this->url = $url;
 
         return $this;
-    }
-
-    /**
-     * @return string $url
-     */
-    public function getUrl()
-    {
-        return $this->url;
     }
 }
