@@ -38,6 +38,30 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
     /**
      * @param mixed $data
      *
+     * @return mixed
+     */
+    public function reverseTransform($data)
+    {
+        if (null === $data) {
+            return null;
+        } elseif (is_array($data) || is_object($data)) {
+
+            $collection = array();
+
+            foreach ($data as $id) {
+                $collection[] = $this->manager->getRepository()->findOneBy(array('id' => $id));
+            }
+
+            return $collection;
+        } else {
+            $model = $this->manager->getRepository()->findOneBy(array('id' => $data));
+            return  $model;
+        }
+    }
+
+    /**
+     * @param mixed $data
+     *
      * @return array|mixed
      */
     public function transform($data)
@@ -59,30 +83,6 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
             return $collection;
         } else {
             return $data;
-        }
-    }
-
-    /**
-     * @param mixed $data
-     *
-     * @return mixed
-     */
-    public function reverseTransform($data)
-    {
-        if (null === $data) {
-            return null;
-        } elseif (is_array($data) || is_object($data)) {
-
-            $collection = array();
-
-            foreach ($data as $id) {
-                $collection[] = $this->manager->getRepository()->findOneBy(array('id' => $id));
-            }
-
-            return $collection;
-        } else {
-            $model = $this->manager->getRepository()->findOneBy(array('id' => $data));
-            return  $model;
         }
     }
 }

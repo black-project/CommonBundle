@@ -5,18 +5,12 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-
         <service id="black_admin.form.type.tag" class="Black\Bundle\CommonBundle\Form\Type\TagType">
             <tag name="form.type" alias="black_common_tag" />
-        </service>
-
-        <service id="black_common.form.type.double_box" class="Black\Bundle\CommonBundle\Form\Type\DoubleBoxType" public="true">
-            <tag name="form.type" alias="double_box" />
         </service>
 
         <service id="black_common.image_type_extension" class="Black\Bundle\CommonBundle\Form\Extension\ImageTypeExtension" public="true">
             <tag name="form.type_extension" alias="file" />
         </service>
-
     </services>
 </container>

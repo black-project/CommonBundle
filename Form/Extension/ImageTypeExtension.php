@@ -27,22 +27,6 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 class ImageTypeExtension extends AbstractTypeExtension
 {
     /**
-     * @return string
-     */
-    public function getExtendedType()
-    {
-        return 'file';
-    }
-
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setOptional(array('image_path'));
-    }
-
-    /**
      * @param FormView      $view
      * @param FormInterface $form
      * @param array         $options
@@ -61,5 +45,21 @@ class ImageTypeExtension extends AbstractTypeExtension
 
             $view->vars['image_url'] = $imageUrl;
         }
+    }
+
+    /**
+     * @return string
+     */
+    public function getExtendedType()
+    {
+        return 'file';
+    }
+
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setOptional(array('image_path'));
     }
 }

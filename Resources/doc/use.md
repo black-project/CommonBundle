@@ -55,8 +55,39 @@ the ImageEntityTrait, don't forget to add the annotation `@ORM\HasLifecycleCallb
 
 ### FormType
 
-#### Thing
-We have a ThingTrait so... We have a ThingType! I hope he save you lot of time.
+#### TagType
+
+TagType is a simple type who extends TextType. He is useful if you want to use a simple widget for
+multiple keywords like tags, meta keywords...
+
+The TagType use the TextToTagTransformer who implode/explode comma-separated string.
+
+If you want a into the wild application, use the
+[XOXCO jQuery Tags Input](http://xoxco.com/projects/code/tagsinput/) with this type.
+
+```php
+<?php
+
+namespace Acme\Bundle\DemoBundle\Form\Type;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+
+class DemoType extends AbstractType
+{
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array                $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->addType('demo', 'black_common_tag');
+    }
+}
+```
+
+
+
 
 
 

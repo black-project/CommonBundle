@@ -23,8 +23,8 @@
         "stof/doctrine-extensions-bundle": "dev-master"
     },
     "suggest": {
-        "doctrine/mongodb-odm": "Needed when using mongo implementation",
-        "doctrine/mongodb-odm-bundle": "Needed when using mongo implementation"
+        "doctrine/mongodb-odm": "If you want to use MongoDB",
+        "doctrine/mongodb-odm-bundle": "If you want to use MongoDB"
     },
     "autoload": {
         "psr-0": { "Black\\Bundle\\CommonBundle": "" }

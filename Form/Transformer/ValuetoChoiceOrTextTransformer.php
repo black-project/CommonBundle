@@ -38,6 +38,20 @@ class ValuetoChoiceOrTextTransformer implements DataTransformerInterface
     /**
      * @param mixed $data
      *
+     * @return mixed
+     */
+    public function reverseTransform($data)
+    {
+        if ('other' === $data['choice']) {
+            return $data['text'];
+        }
+
+        return $data['choice'];
+    }
+
+    /**
+     * @param mixed $data
+     *
      * @return array|mixed
      */
     public function transform($data)
@@ -53,19 +67,5 @@ class ValuetoChoiceOrTextTransformer implements DataTransformerInterface
             'choice' => 'other',
             'text' => $data
         );
-    }
-
-    /**
-     * @param mixed $data
-     *
-     * @return mixed
-     */
-    public function reverseTransform($data)
-    {
-        if ('other' === $data['choice']) {
-            return $data['text'];
-        }
-
-        return $data['choice'];
     }
 }

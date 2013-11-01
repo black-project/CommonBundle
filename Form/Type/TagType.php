@@ -35,18 +35,18 @@ class TagType extends AbstractType
     }
 
     /**
-     * @return null|string|\Symfony\Component\Form\FormTypeInterface
-     */
-    public function getParent()
-    {
-        return 'text';
-    }
-
-    /**
      * @return string
      */
     public function getName()
     {
         return 'black_common_tag';
+    }
+
+    /**
+     * @return null|string|\Symfony\Component\Form\FormTypeInterface
+     */
+    public function getParent()
+    {
+        return 'text';
     }
 }

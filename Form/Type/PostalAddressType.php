@@ -53,58 +53,90 @@ class PostalAddressType extends AbstractType
     {
         $builder
             ->add('contactType', 'choice', array(
-                    'empty_value'       => 'person.admin.postalAddress.type.empty',
-                    'label'             => 'person.admin.postalAddress.type.text',
+                    'empty_value'       => 'black.common.type.postal.type.empty',
+                    'label'             => 'black.common.type.postal.type.label',
                     'choice_list'       => $this->contact
                 )
             )
             ->add('name', 'text',  array(
-                    'label'         => 'person.admin.postalAddress.name.text'
+                    'label'         => 'black.common.type.postal.name.label'
                 )
             )
             ->add('description', 'text', array(
-                    'label'         => 'person.admin.postalAddress.description.text',
+                    'label'         => 'black.common.type.postal.description.label',
                     'required'      => false
                 )
             )
             ->add('streetAddress', 'text', array(
-                    'label'         => 'person.admin.postalAddress.address.street.text',
+                    'label'         => 'black.common.type.postal.street.label',
                     'required'      => false
                 )
             )
             ->add('complementaryStreetAddress', 'text', array(
-                    'label'         => 'person.admin.postalAddress.address.complementary.text',
+                    'label'         => 'black.common.type.postal.complementary.label',
                     'required'      => false
                 )
             )
             ->add('postalCode', 'text', array(
-                    'label'         => 'person.admin.postalAddress.address.postal.text',
+                    'label'         => 'black.common.type.postal.code.label',
                     'required'      => false
                 )
             )
             ->add('postOfficeBoxNumber', 'text', array(
-                    'label'         => 'person.admin.postalAddress.address.box.text',
+                    'label'         => 'black.common.type.postal.box.label',
                     'required'      => false
                 )
             )
             ->add('addressLocality', 'text', array(
-                    'label'         => 'person.admin.postalAddress.address.locality.text',
+                    'label'         => 'black.common.type.postal.locality.label',
                     'required'      => false
                 )
             )
             ->add('addressRegion', 'text', array(
-                    'label'         => 'person.admin.postalAddress.address.region.text',
+                    'label'         => 'black.common.type.postal.region.label',
                     'required'      => false
                 )
             )
             ->add('addressCountry', 'country', array(
-                    'label'         => 'person.admin.postalAddress.address.country.text',
-                    'empty_value'   => 'person.admin.postalAddress.address.country.empty',
+                    'label'         => 'black.common.type.postal.country.label',
+                    'empty_value'   => 'black.common.type.postal.country.empty',
                     'required'      => false
                 )
-            );
+            )
+            ->add('email', 'text', array(
+                    'label'         => 'black.common.type.postal.email.label',
+                    'required'      => false
+                )
+            )
+            ->add('faxNumber', 'text', array(
+                    'label'         => 'black.common.type.postal.fax.label',
+                    'required'      => false
+                )
+            )
+            ->add('mobile', 'text', array(
+                    'label'         => 'black.common.type.postal.mobile.label',
+                    'required'      => false
+                )
+            )
+            ->add('telephone', 'text', array(
+                    'label'         => 'black.common.type.postal.telephone.label',
+                    'required'      => false
+                )
+            )
+        ;
     }
 
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return 'black_common_postaladdress';
+    }
+
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(
@@ -114,10 +146,5 @@ class PostalAddressType extends AbstractType
                 'translation_domain'    => 'form'
             )
         );
-    }
-
-    public function getName()
-    {
-        return 'black_common_postaladdress';
     }
 }

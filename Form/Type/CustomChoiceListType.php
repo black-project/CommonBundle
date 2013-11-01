@@ -63,11 +63,19 @@ class CustomChoiceListType extends AbstractType
     }
 
     /**
-     * @param $manager
+     * {@inheritdoc}
      */
-    public function setManager($manager)
+    public function getName()
     {
-        $this->manager = $manager;
+        return $this->choiceListName;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getParent()
+    {
+        return 'choice';
     }
 
     /**
@@ -79,20 +87,12 @@ class CustomChoiceListType extends AbstractType
                 'choice_list' => $this->choiceList,
             ));
     }
- 
+
     /**
-     * {@inheritdoc}
+     * @param $manager
      */
-    public function getParent()
+    public function setManager($manager)
     {
-        return 'choice';
-    }
- 
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return $this->choiceListName;
+        $this->manager = $manager;
     }
 }
