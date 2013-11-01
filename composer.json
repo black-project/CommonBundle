@@ -2,7 +2,7 @@
     "name": "black/common-bundle",
     "type": "symfony-bundle",
     "description": "Symfony BlackCommonBundle",
-    "keywords": ["Common"],
+    "keywords": ["Symfony2", "Bundle", "Black"],
     "homepage": "http://www.lablackroom.com",
     "license": "MIT",
     "authors": [
