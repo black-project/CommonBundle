@@ -1,40 +1,41 @@
 black:
-    common:
-        choice:
-            address:
-                principal: Principal
-                home: Home
-                work: Work
-                other: Other
-        type:
-            postal:
-                type:
-                    empty: Choose a value
-                    label: Contact point
-                name:
-                    label: Name
-                description:
-                    label: Description
-                street:
-                    label: Street
-                complementary:
-                    label: Street (complementary)
-                code:
-                    label: Postal code
-                box:
-                    label: Post office box number
-                locality:
-                    label: Locality
-                region:
-                    label: Region
-                country:
-                    empty: Choose a country
-                    label: Country
-                email:
-                    label: Email address
-                fax:
-                    label: Fax number
-                mobile:
-                    label: Mobile number
-                telephone:
-                    label: Telephone number
+    bundle:
+        common:
+            choice:
+                address:
+                    principal: Principal
+                    home: Home
+                    work: Work
+                    other: Other
+            type:
+                postal:
+                    type:
+                        empty: Choose a value
+                        label: Contact point
+                    name:
+                        label: Name
+                    description:
+                        label: Description
+                    street:
+                        label: Street
+                    complementary:
+                        label: Street (complementary)
+                    code:
+                        label: Postal code
+                    box:
+                        label: Post office box number
+                    locality:
+                        label: Locality
+                    region:
+                        label: Region
+                    country:
+                        empty: Choose a country
+                        label: Country
+                    email:
+                        label: Email address
+                    fax:
+                        label: Fax number
+                    mobile:
+                        label: Mobile number
+                    telephone:
+                        label: Telephone number
