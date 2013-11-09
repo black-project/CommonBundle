@@ -53,73 +53,73 @@ class PostalAddressType extends AbstractType
     {
         $builder
             ->add('contactType', 'choice', array(
-                    'empty_value'       => 'black.common.type.postal.type.empty',
-                    'label'             => 'black.common.type.postal.type.label',
+                    'empty_value'       => 'black.bundle.common.type.postal.type.empty',
+                    'label'             => 'black.bundle.common.type.postal.type.label',
                     'choice_list'       => $this->contact
                 )
             )
             ->add('name', 'text',  array(
-                    'label'         => 'black.common.type.postal.name.label'
+                    'label'         => 'black.bundle.common.type.postal.name.label'
                 )
             )
             ->add('description', 'text', array(
-                    'label'         => 'black.common.type.postal.description.label',
+                    'label'         => 'black.bundle.common.type.postal.description.label',
                     'required'      => false
                 )
             )
             ->add('streetAddress', 'text', array(
-                    'label'         => 'black.common.type.postal.street.label',
+                    'label'         => 'black.bundle.common.type.postal.street.label',
                     'required'      => false
                 )
             )
             ->add('complementaryStreetAddress', 'text', array(
-                    'label'         => 'black.common.type.postal.complementary.label',
+                    'label'         => 'black.bundle.common.type.postal.complementary.label',
                     'required'      => false
                 )
             )
             ->add('postalCode', 'text', array(
-                    'label'         => 'black.common.type.postal.code.label',
+                    'label'         => 'black.bundle.common.type.postal.code.label',
                     'required'      => false
                 )
             )
             ->add('postOfficeBoxNumber', 'text', array(
-                    'label'         => 'black.common.type.postal.box.label',
+                    'label'         => 'black.bundle.common.type.postal.box.label',
                     'required'      => false
                 )
             )
             ->add('addressLocality', 'text', array(
-                    'label'         => 'black.common.type.postal.locality.label',
+                    'label'         => 'black.bundle.common.type.postal.locality.label',
                     'required'      => false
                 )
             )
             ->add('addressRegion', 'text', array(
-                    'label'         => 'black.common.type.postal.region.label',
+                    'label'         => 'black.bundle.common.type.postal.region.label',
                     'required'      => false
                 )
             )
             ->add('addressCountry', 'country', array(
-                    'label'         => 'black.common.type.postal.country.label',
-                    'empty_value'   => 'black.common.type.postal.country.empty',
+                    'label'         => 'black.bundle.common.type.postal.country.label',
+                    'empty_value'   => 'black.bundle.common.type.postal.country.empty',
                     'required'      => false
                 )
             )
             ->add('email', 'text', array(
-                    'label'         => 'black.common.type.postal.email.label',
+                    'label'         => 'black.bundle.common.type.postal.email.label',
                     'required'      => false
                 )
             )
             ->add('faxNumber', 'text', array(
-                    'label'         => 'black.common.type.postal.fax.label',
+                    'label'         => 'black.bundle.common.type.postal.fax.label',
                     'required'      => false
                 )
             )
             ->add('mobile', 'text', array(
-                    'label'         => 'black.common.type.postal.mobile.label',
+                    'label'         => 'black.bundle.common.type.postal.mobile.label',
                     'required'      => false
                 )
             )
             ->add('telephone', 'text', array(
-                    'label'         => 'black.common.type.postal.telephone.label',
+                    'label'         => 'black.bundle.common.type.postal.telephone.label',
                     'required'      => false
                 )
             )

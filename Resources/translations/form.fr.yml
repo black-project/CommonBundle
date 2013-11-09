@@ -1,40 +1,42 @@
 black:
-    common:
-        choice:
-            address:
-                principal: Principal
-                home: Domicile
-                work: Travail
-                other: Autre
-        type:
-            postal:
-                type:
-                    empty: Choisir une valeur
-                    label: Point de contact
-                name:
-                    label: Nom
-                description:
-                    label: Description
-                street:
-                    label: Rue
-                complementary:
-                    label: Rue (complémentaire)
-                code:
-                    label: Code postal
-                box:
-                    label: Boite postale
-                locality:
-                    label: Ville
-                region:
-                    label: Region
-                country:
-                    empty: Choisir un pays
-                    label: Pays
-                email:
-                    label: Adresse email
-                fax:
-                    label: Numéro de fax
-                mobile:
-                    label: Numéro de portable
-                telephone:
-                    label: Numéro de Téléphone
+    bundle:
+        common:
+            choice:
+                address:
+                    principal: Principal
+                    home: Domicile
+                    work: Travail
+                    other: Autre
+            type:
+                postal:
+                    type:
+                        empty: Choisir une valeur
+                        label: Point de contact
+                    name:
+                        label: Nom
+                    description:
+                        label: Description
+                    street:
+                        label: Rue
+                    complementary:
+                        label: Rue (complémentaire)
+                    code:
+                        label: Code postal
+                    box:
+                        label: Boite postale
+                    locality:
+                        label: Ville
+                    region:
+                        label: Region
+                    country:
+                        empty: Choisir un pays
+                        label: Pays
+                    email:
+                        label: Adresse email
+                    fax:
+                        label: Numéro de fax
+                    mobile:
+                        label: Numéro de portable
+                    telephone:
+                        label: Numéro de Téléphone
+
