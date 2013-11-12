@@ -31,6 +31,14 @@ trait ContactPointTrait
     }
 
     /**
+     * @return string $description
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
      * @return mixed
      */
     public function getEmail()
@@ -52,6 +60,14 @@ trait ContactPointTrait
     public function getMobile()
     {
         return $this->mobile;
+    }
+
+    /**
+     * @return string $name
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**
@@ -78,6 +94,18 @@ trait ContactPointTrait
     public function setContactType($contactType)
     {
         $this->contactType = $contactType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
 
         return $this;
     }
@@ -114,6 +142,18 @@ trait ContactPointTrait
     public function setMobile($mobile)
     {
         $this->mobile = $mobile;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
 
         return $this;
     }

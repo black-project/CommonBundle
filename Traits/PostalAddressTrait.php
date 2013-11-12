@@ -68,17 +68,17 @@ trait PostalAddressTrait
     /**
      * @return mixed
      */
-    public function getPostalCode()
+    public function getPostOfficeBoxNumber()
     {
-        return $this->postalCode;
+        return $this->postOfficeBoxNumber;
     }
 
     /**
      * @return mixed
      */
-    public function getPostOfficeBoxNumber()
+    public function getPostalCode()
     {
-        return $this->postOfficeBoxNumber;
+        return $this->postalCode;
     }
 
     /**
@@ -138,18 +138,6 @@ trait PostalAddressTrait
     }
 
     /**
-     * @param $postalCode
-     *
-     * @return $this
-     */
-    public function setPostalCode($postalCode)
-    {
-        $this->postalCode = $postalCode;
-
-        return $this;
-    }
-
-    /**
      * @param $postOfficeBoxNumber
      *
      * @return $this
@@ -157,6 +145,18 @@ trait PostalAddressTrait
     public function setPostOfficeBoxNumber($postOfficeBoxNumber)
     {
         $this->postOfficeBoxNumber = $postOfficeBoxNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param $postalCode
+     *
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->postalCode = $postalCode;
 
         return $this;
     }

@@ -22,9 +22,8 @@ namespace Black\Bundle\CommonBundle\Traits;
  */
 trait ContactPointDocumentTrait
 {
-    use ThingDocumentTrait;
     use ContactPointTrait;
-    
+
     /**
      * A person or organization can have different contact points, for different
      * purposes. For example, a sales contact point, a PR contact point and so
@@ -34,7 +33,13 @@ trait ContactPointDocumentTrait
      * @Assert\Choice(callback = "getType")
      */
     protected $contactType;
-
+    /**
+     * A short description of the item
+     *
+     * @ODM\String
+     * @Assert\Type(type="string")
+     */
+    protected $description;
     /**
      * Email address
      *
@@ -44,7 +49,6 @@ trait ContactPointDocumentTrait
      * @Assert\Email()
      */
     protected $email;
-
     /**
      * The fax number
      *
@@ -52,15 +56,6 @@ trait ContactPointDocumentTrait
      * @Assert\Type(type="string")
      */
     protected $faxNumber;
-
-    /**
-     * The telephone number
-     *
-     * @ODM\String
-     * @Assert\Type(type="string")
-     */
-    protected $telephone;
-
     /**
      * The mobile number
      *
@@ -68,4 +63,19 @@ trait ContactPointDocumentTrait
      * @Assert\Type(type="string")
      */
     protected $mobile;
+    /**
+     * The name of the item
+     *
+     * @ODM\String
+     * @Assert\Length(max="255")
+     * @Assert\Type(type="string")
+     */
+    protected $name;
+    /**
+     * The telephone number
+     *
+     * @ODM\String
+     * @Assert\Type(type="string")
+     */
+    protected $telephone;
 }

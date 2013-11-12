@@ -55,7 +55,7 @@ trait ThingDocumentTrait
     protected $slug;
 
     /**
-     * URL of the item
+     * URL of the items
      *
      * @ODM\String
      * @Assert\Url

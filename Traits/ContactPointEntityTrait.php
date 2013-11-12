@@ -22,9 +22,8 @@ namespace Black\Bundle\CommonBundle\Traits;
  */
 trait ContactPointEntityTrait
 {
-    use ThingEntityTrait;
     use ContactPointTrait;
-    
+
     /**
      * A person or organization can have different contact points, for different
      * purposes. For example, a sales contact point, a PR contact point and so
@@ -34,7 +33,13 @@ trait ContactPointEntityTrait
      * @Assert\Choice(callback = "getType")
      */
     protected $contactType;
-
+    /**
+     * A short description of the item
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     * @Assert\Type(type="string")
+     */
+    protected $description;
     /**
      * Email address
      *
@@ -43,7 +48,6 @@ trait ContactPointEntityTrait
      * @Assert\Email()
      */
     protected $email;
-
     /**
      * The fax number
      *
@@ -51,7 +55,6 @@ trait ContactPointEntityTrait
      * @Assert\Type(type="string")
      */
     protected $faxNumber;
-
     /**
      * The mobile number
      *
@@ -59,7 +62,14 @@ trait ContactPointEntityTrait
      * @Assert\Type(type="string")
      */
     protected $mobile;
-
+    /**
+     * The name of the item
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\Length(max="255")
+     * @Assert\Type(type="string")
+     */
+    protected $name;
     /**
      * The telephone number
      *
