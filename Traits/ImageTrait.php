@@ -33,16 +33,6 @@ trait ImageTrait
     protected $temp;
 
     /**
-     * Return the absolute path
-     *
-     * @return null|string
-     */
-    protected function getAbsolutePath()
-    {
-        return null === $this->path ? null : $this->getUploadRootDir() . '/' . $this->path;
-    }
-
-    /**
      * @return mixed
      */
     public function getImage()
@@ -59,31 +49,11 @@ trait ImageTrait
     }
 
     /**
-     * Return the upload dir
-     *
-     * @return string
-     */
-    protected function getUploadDir()
-    {
-        return 'uploads';
-    }
-
-    /**
-     * Return the absolute upload dir
-     *
-     * @return string
-     */
-    protected function getUploadRootDir()
-    {
-        return __DIR__ . '/../../../../../../../web/' . $this->getUploadDir();
-    }
-
-    /**
      * Return the web relative dir
      *
      * @return null|string
      */
-    protected function getWebPath()
+    public function getWebPath()
     {
         return null === $this->path ? null : $this->getUploadDir() . '/' . $this->path;
     }
@@ -117,5 +87,35 @@ trait ImageTrait
         $this->path = $path;
 
         return $this;
+    }
+
+    /**
+     * Return the absolute path
+     *
+     * @return null|string
+     */
+    protected function getAbsolutePath()
+    {
+        return null === $this->path ? null : $this->getUploadRootDir() . '/' . $this->path;
+    }
+
+    /**
+     * Return the upload dir
+     *
+     * @return string
+     */
+    protected function getUploadDir()
+    {
+        return 'uploads';
+    }
+
+    /**
+     * Return the absolute upload dir
+     *
+     * @return string
+     */
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../../../../web/' . $this->getUploadDir();
     }
 } 

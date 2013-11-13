@@ -58,14 +58,14 @@ class ValuetoChoiceOrTextTransformer implements DataTransformerInterface
     {
         if (in_array($data, $this->choices, true)) {
             return array(
-                'choice' => $data,
-                'text' => null
+                'choice'    => $data,
+                'text'      => null
             );
         }
 
         return array(
-            'choice' => 'other',
-            'text' => $data
+            'choice'    => 'other',
+            'text'      => $data
         );
     }
 }

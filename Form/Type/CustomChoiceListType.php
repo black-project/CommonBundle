@@ -29,12 +29,10 @@ class CustomChoiceListType extends AbstractType
      * @var
      */
     protected $choiceList;
-
     /**
      * @var
      */
     protected $choiceListName;
-
     /**
      * @var
      */
@@ -55,7 +53,7 @@ class CustomChoiceListType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        if($this->manager !== null) {
+        if ($this->manager !== null) {
             $builder->addModelTransformer(
                 new ValuetoModelsOrNullTransformer($this->manager)
             );

@@ -38,27 +38,27 @@ class AddressList extends LazyChoiceList
     }
 
     /**
-     * @return SimpleChoiceList|\Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
-     */
-    protected function loadChoiceList()
-    {
-        $array = array(
-           'P' => 'black.bundle.common.choice.address.principal',
-           'H' => 'black.bundle.common.choice.address.home',
-           'W' => 'black.bundle.common.choice.address.work',
-           'O' => 'black.bundle.common.choice.address.other'
-        );
-
-        $choices = new SimpleChoiceList($array);
-
-        return $choices;
-    }
-
-    /**
      * @return $this
      */
     protected function getClass()
     {
         return $this;
+    }
+
+    /**
+     * @return SimpleChoiceList|\Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
+     */
+    protected function loadChoiceList()
+    {
+        $array = array(
+           'principal'  => 'black.bundle.common.choice.address.principal',
+           'home'       => 'black.bundle.common.choice.address.home',
+           'work'       => 'black.bundle.common.choice.address.work',
+           'other'      => 'black.bundle.common.choice.address.other'
+        );
+
+        $choices = new SimpleChoiceList($array);
+
+        return $choices;
     }
 }
