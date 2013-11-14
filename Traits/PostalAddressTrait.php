@@ -11,6 +11,8 @@
 
 namespace Black\Bundle\CommonBundle\Traits;
 
+use Symfony\Component\Intl\Intl;
+
 /**
  * Class PostalAddressTrait
  *

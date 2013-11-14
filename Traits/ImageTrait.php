@@ -11,7 +11,6 @@
 
 namespace Black\Bundle\CommonBundle\Traits;
 
-use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**

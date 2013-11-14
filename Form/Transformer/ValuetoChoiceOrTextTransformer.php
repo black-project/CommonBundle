@@ -12,6 +12,7 @@
 namespace Black\Bundle\CommonBundle\Form\Transformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
+use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface;
 
 /**
  * Class ValuetoChoiceOrTextTransformer
@@ -25,12 +26,12 @@ class ValuetoChoiceOrTextTransformer implements DataTransformerInterface
     /**
      * @var
      */
-    private $choices;
+    protected $choices;
 
     /**
      * @param $choices
      */
-    public function __construct($choices)
+    public function __construct(ChoiceListInterface $choices)
     {
         $this->choices = $choices->getChoices();
     }
