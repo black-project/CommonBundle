@@ -32,7 +32,6 @@ trait PostalAddressDocumentTrait
      * @Assert\Country
      */
     protected $addressCountry;
-
     /**
      * The locality
      *
@@ -40,7 +39,6 @@ trait PostalAddressDocumentTrait
      * @Assert\Type(type="string")
      */
     protected $addressLocality;
-
     /**
      * The region
      *
@@ -48,7 +46,6 @@ trait PostalAddressDocumentTrait
      * @Assert\Type(type="string")
      */
     protected $addressRegion;
-
     /**
      * The complementary street address
      *
@@ -56,15 +53,6 @@ trait PostalAddressDocumentTrait
      * @Assert\Type(type="string")
      */
     protected $complementaryStreetAddress;
-
-    /**
-     * The postal code
-     *
-     * @ODM\String
-     * @Assert\Type(type="string")
-     */
-    protected $postalCode;
-
     /**
      * The post offce box number for PO box addresses
      *
@@ -72,7 +60,13 @@ trait PostalAddressDocumentTrait
      * @Assert\Type(type="string")
      */
     protected $postOfficeBoxNumber;
-
+    /**
+     * The postal code
+     *
+     * @ODM\String
+     * @Assert\Type(type="string")
+     */
+    protected $postalCode;
     /**
      * The street address
      *
