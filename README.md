@@ -3,7 +3,7 @@ CommonBundle
 
 A simple CommonBundle with Types, Traits and Transformers.
 
-[![Insight](https://insight.sensiolabs.com/projects/6651adaa-4f2a-48da-9221-fd98167d91f3/big.png)]
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/cac403b1-eaea-4a6b-92b9-21e4d412c1e5/big.png)](https://insight.sensiolabs.com/projects/cac403b1-eaea-4a6b-92b9-21e4d412c1e5)
 
 Documentation
 -------------
