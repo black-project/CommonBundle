@@ -29,7 +29,7 @@ class ValuetoChoiceOrTextTransformer implements DataTransformerInterface
     protected $choices;
 
     /**
-     * @param $choices
+     * @param ChoiceListInterface $choices
      */
     public function __construct(ChoiceListInterface $choices)
     {
@@ -58,15 +58,15 @@ class ValuetoChoiceOrTextTransformer implements DataTransformerInterface
     public function transform($data)
     {
         if (in_array($data, $this->choices, true)) {
-            return array(
+            return [
                 'choice'    => $data,
                 'text'      => null
-            );
+            ];
         }
 
-        return array(
+        return [
             'choice'    => 'other',
             'text'      => $data
-        );
+        ];
     }
 }
