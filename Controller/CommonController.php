@@ -164,6 +164,14 @@ class CommonController implements ControllerInterface
     }
 
     /**
+     * @return mixed
+     */
+    public function getException()
+    {
+        return $this->exception;
+    }
+
+    /**
      * @param HandlerInterface $handler
      */
     public function setHandler(HandlerInterface $handler)
