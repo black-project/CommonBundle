@@ -55,6 +55,7 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
             return $collection;
         } else {
             $model = $this->manager->getRepository()->findOneBy(array('id' => $data));
+
             return  $model;
         }
     }

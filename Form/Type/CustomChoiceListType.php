@@ -42,7 +42,8 @@ class CustomChoiceListType extends AbstractType
      * @param $choiceList
      * @param $choiceListName
      */
-    public function __construct($choiceList, $choiceListName) {
+    public function __construct($choiceList, $choiceListName)
+    {
         $this->choiceList       = $choiceList;
         $this->choiceListName   = $choiceListName;
     }
