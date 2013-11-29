@@ -83,7 +83,7 @@ trait ContactPointTrait
      */
     public function getType()
     {
-        return array('P', 'H', 'W', 'O');
+        return ['principal', 'home', 'work', 'other'];
     }
 
     /**
