@@ -25,7 +25,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 abstract class CommonController implements ControllerInterface
 {
     /**
-     * @param Configuration $configuration
+     * @param Configuration    $configuration
+     * @param HandlerInterface $handler
      */
     public function __construct(Configuration $configuration, HandlerInterface $handler)
     {
@@ -91,7 +92,7 @@ abstract class CommonController implements ControllerInterface
      *
      * @return mixed
      */
-    public function showAction($value)
+    public function readAction($value)
     {
         $document   = $this->configuration->getManager()->findDocument($value);
 
