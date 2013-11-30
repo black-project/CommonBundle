@@ -39,7 +39,7 @@ Add BlackCommonBundle in your composer.json:
 ``` js
 {
     "require": {
-        "blackengine/common-bundle": "@dev"
+        "black/common-bundle": "~0.2"
     }
 }
 ```
