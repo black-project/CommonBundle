@@ -53,7 +53,24 @@ These Traits are explicit and available for Doctrine ORM and Doctrine MongoDB. I
 the ImageEntityTrait, don't forget to add the annotation `@ORM\HasLifecycleCallbacks` in your class !
 
 
-### FormType
+### Form - EventListener
+
+#### SetButtonsSubscriber
+
+SetButtonsSubscriber add 3 (or 4 if your object is already persisted) buttons in your FormType. This "trick"
+is a very good way to manage your form by using `$this->form->get('button')->isClicked()`.
+
+If you want to read more about this, just [read this](http://symfony.com/blog/new-in-symfony-2-3-buttons-support-in-forms).
+
+
+### Form - Extension
+
+#### ImageTypeExtension
+
+ImageTypeExtension is connected to Image(Document|Entity)Trait and add the `path` next to the image type.
+
+
+### Form - Type
 
 #### TagType
 
@@ -85,6 +102,15 @@ class DemoType extends AbstractType
     }
 }
 ```
+
+### Form - Transformer
+
+#### TextToTagTransformer
+
+TextToTagTransformer transform an array in a comma-separated text and reverse transform a
+comma-separated text to array. Harray! (This joke is only good with french people).
+
+
 
 
 
