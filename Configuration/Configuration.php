@@ -15,9 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
-use Black\Bundle\CommonBundle\Form\Handler\HandlerInterface;
 use Black\Bundle\CommonBundle\Doctrine\ManagerInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Class Configuration
