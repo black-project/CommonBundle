@@ -1,94 +1,55 @@
 How to use this awesome bundle?
 ===============================
 
-## Traits
+## Form - EventListener
 
-We provide some Traits based on [schema](http://www.schema.org)
+### SetButtonsSubscriber
 
-### Thing
+SetButtonSubsriber add 3 (or 4 if your class is already persisted and have an $id) buttons
+in your FormType. This "trick" allow you to manage your form submission with something like
+this `$this->form->get('button')->isClicked()`.
 
-`Thing` is the most generic type of item and because he is generic, it's a Trait! :)
+If you want more information about this, just [read this](http://symfony.com/blog/new-in-symfony-2-3-buttons-support-in-forms).
 
-#### For Doctrine ORM
 
-```php
-<?php
+### Views
 
-namespace Acme\Bundle\DemoBundle\Entity;
+#### Fields
+`fields.html.twig` changes `{% block form_* %}` and adapt them for Twitter Bootstrap.
 
-use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
-use Symfony\Component\Validator\Constraints as Assert;
-use Black\Bundle\CommonBundle\Traits\ThingEntityTrait
+I use this form_theme by this way (in my `::base.html.twig`)
 
-class Demo
-{
-    use ThingEntityTrait;
-}
+```yaml
 
-```
+{% if form is defined %}
+    {% form_theme form 'BlackAssetsBundle:Form:fields.html.twig' %}
+{% endif %}
 
-#### For Doctrine MongoDB
+<!DOCTYPE html>
 
-```php
-<?php
-
-namespace Acme\Bundle\DemoBundle\Document;
-
-use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
-use Gedmo\Mapping\Annotation as Gedmo;
-use Symfony\Component\Validator\Constraints as Assert;
-use Black\Bundle\CommonBundle\Traits\ThingDocumentTrait;
-
-class Demo
-{
-    use ThingDocumentTrait;
-}
+[...]
 
 ```
 
-### PostalAddress, ContactPoint and Image
+### Public
+Twitter Bootstrap v2.3.7
 
-These Traits are explicit and available for Doctrine ORM and Doctrine MongoDB. If you want to use
-the ImageEntityTrait, don't forget to add the annotation `@ORM\HasLifecycleCallbacks` in your class !
+```yaml
 
+{#  Import CSS  #}
+{% stylesheets '@BlackAssetsBundle/Resources/public/css/bootstrap.min.css' %}
+<link href="{{ asset_url }}" rel="stylesheet" media="screen, projection" />
+{% endstylesheets %}
 
-### FormType
+{% stylesheets '@BlackAssetsBundle/Resources/public/css/bootstrap-responsive.min.css' %}
+<link href="{{ asset_url }}" rel="stylesheet" media="screen, projection" />
+{% endstylesheets %}
 
-#### TagType
+{% block stylesheets %}{% endblock %}
 
-TagType is a simple type who extends TextType. He is useful if you want to use a simple widget for
-multiple keywords like tags, meta keywords...
+{% javascripts '@BlackAssetsBundle/Resources/public/js/bootstrap.min.js' %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
 
-The TagType use the TextToTagTransformer who implode/explode comma-separated string.
-
-If you want a into the wild application, use the
-[XOXCO jQuery Tags Input](http://xoxco.com/projects/code/tagsinput/) with this type.
-
-```php
-<?php
-
-namespace Acme\Bundle\DemoBundle\Form\Type;
-
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilderInterface;
-
-class DemoType extends AbstractType
-{
-    /**
-     * @param FormBuilderInterface $builder
-     * @param array                $options
-     */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder->addType('demo', 'black_common_tag');
-    }
-}
+{% block javascripts %}{% endblock %}
 ```
-
-
-
-
-
-
-

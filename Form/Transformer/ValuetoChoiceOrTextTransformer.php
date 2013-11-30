@@ -18,7 +18,7 @@ use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface;
  * Class ValuetoChoiceOrTextTransformer
  *
  * @package Black\Bundle\CommonBundle\Form\Transformer
- * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @author  Boris Tacyniak <boris.tacyniak@viacesi.fr>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class ValuetoChoiceOrTextTransformer implements DataTransformerInterface

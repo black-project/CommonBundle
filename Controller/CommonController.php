@@ -11,14 +11,9 @@
 
 namespace Black\Bundle\CommonBundle\Controller;
 
-use JMS\DiExtraBundle\Annotation\Service;
-use Black\Bundle\CommonBundle\Doctrine\ManagerInterface;
+use Black\Bundle\CommonBundle\Configuration\Configuration;
 use Black\Bundle\CommonBundle\Form\Handler\HandlerInterface;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Routing\Router;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
 /**
  * Class CommonController
@@ -27,47 +22,16 @@ use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
  * @author  Alexandre Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
-class CommonController implements ControllerInterface
+abstract class CommonController implements ControllerInterface
 {
     /**
-     * @var
+     * @param Configuration    $configuration
+     * @param HandlerInterface $handler
      */
-    protected $exception;
-    /**
-     * @var
-     */
-    protected $handler;
-    /**
-     * @var
-     */
-    protected $manager;
-    /**
-     * @var
-     */
-    protected $request;
-    /**
-     * @var
-     */
-    protected $router;
-    /**
-     * @var
-     */
-    protected $session;
-
-    /**
-     * @param Request          $request
-     * @param Router           $router
-     * @param SessionInterface $session
-     */
-    public function __construct(
-        Request $request,
-        Router $router,
-        SessionInterface $session
-    )
+    public function __construct(Configuration $configuration, HandlerInterface $handler)
     {
-        $this->request      = $request;
-        $this->router       = $router;
-        $this->session      = $session;
+        $this->configuration    = $configuration;
+        $this->handler          = $handler;
     }
 
     /**
@@ -77,7 +41,7 @@ class CommonController implements ControllerInterface
      */
     public function createAction()
     {
-        $document   = $this->manager->createInstance();
+        $document   = $this->configuration->getManager()->createInstance();
         $process    = $this->handler->process($document);
 
         if ($process) {
@@ -97,48 +61,16 @@ class CommonController implements ControllerInterface
      */
     public function deleteAction($value)
     {
-        $document   = $this->manager->findDocument($value);
+        $document   = $this->configuration->getManager()->findDocument($value);
 
         if (!$document) {
-            throw new $this->exception;
+            throw new $this->configuration->getException();
         }
 
-        $this->manager->remove($document);
-        $this->manager->flush();
+        $this->configuration->getManager()->remove($document);
+        $this->configuration->getManager()->flush();
 
-        $this->setFlash('success', 'Object was successfully removed');
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHandler()
-    {
-        return $this->handler;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getManager()
-    {
-        return $this->manager;
-    }
-
-    /**
-     * @return Request
-     */
-    public function getRequest()
-    {
-        return $this->request;
-    }
-
-    /**
-     * @return Router
-     */
-    public function getRouter()
-    {
-        return $this->router;
+        $this->configuration->setFlash('success', 'Object was successfully removed');
     }
 
     /**
@@ -148,7 +80,7 @@ class CommonController implements ControllerInterface
      */
     public function indexAction()
     {
-        $documents  = $this->manager->findDocuments();
+        $documents  = $this->configuration->getManager()->findDocuments();
 
         return array(
             'documents' => $documents
@@ -156,48 +88,16 @@ class CommonController implements ControllerInterface
     }
 
     /**
-     * @param HttpExceptionInterface $exception
-     */
-    public function setException(HttpExceptionInterface $exception)
-    {
-        $this->exception    = $exception;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getException()
-    {
-        return $this->exception;
-    }
-
-    /**
-     * @param HandlerInterface $handler
-     */
-    public function setHandler(HandlerInterface $handler)
-    {
-        $this->handler  = $handler;
-    }
-
-    /**
-     * @param ManagerInterface $manager
-     */
-    public function setManager(ManagerInterface $manager)
-    {
-        $this->manager  = $manager;
-    }
-
-    /**
      * Show an object
      *
      * @return mixed
      */
-    public function showAction($value)
+    public function readAction($value)
     {
-        $document   = $this->manager->findDocument($value);
+        $document   = $this->configuration->getManager()->findDocument($value);
 
         if (!$document) {
-            throw new $this->exception;
+            throw new $this->configuration->getException();
         }
 
         return array(
@@ -212,10 +112,10 @@ class CommonController implements ControllerInterface
      */
     public function updateAction($value)
     {
-        $document = $this->manager->findDocument($value);
+        $document = $this->configuration->getManager()->findDocument($value);
 
         if (!$document) {
-            throw new $this->exception;
+            throw new $this->configuration->getException();
         }
 
         $process = $this->handler->process($document);
@@ -228,16 +128,5 @@ class CommonController implements ControllerInterface
             'document'  => $document,
             'form'      => $this->handler->getForm()->createView()
         );
-    }
-
-    /**
-     * @param $type
-     * @param $message
-     *
-     * @return mixed
-     */
-    protected function setFlash($type, $message)
-    {
-        return $this->session->getFlashBag()->add($type, $message);
     }
 }

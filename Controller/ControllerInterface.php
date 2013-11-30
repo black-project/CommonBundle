@@ -30,6 +30,8 @@ interface ControllerInterface
     /**
      * Delete an existing object
      *
+     * @param $value
+     *
      * @return mixed
      */
     public function deleteAction($value);
@@ -44,12 +46,16 @@ interface ControllerInterface
     /**
      * Show an object
      *
+     * @param $value
+     *
      * @return mixed
      */
-    public function showAction($value);
+    public function readAction($value);
 
     /**
      * Update an existing object
+     *
+     * @param $value
      *
      * @return mixed
      */

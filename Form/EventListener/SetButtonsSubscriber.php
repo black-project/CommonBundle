@@ -14,6 +14,7 @@ namespace Black\Bundle\CommonBundle\Form\EventListener;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormInterface;
 
 /**
  * Class SetButtonsSubscriber
@@ -48,42 +49,33 @@ class SetButtonsSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * @param $form
+     * @param FormInterface $form
      */
-    private function addCreateButtons($form)
+    private function addCreateButtons(FormInterface $form)
     {
         $form
             ->add('save', 'submit', array(
-                    'label'     => 'black.bundle.admin.eventListener.setButtonsSubscriber.button.save.label',
-                    'attr'      => array(
-                        'class'     => 'btn btn-success',
-                    )
+                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.save.label'
                 )
             )
             ->add('saveAndAdd', 'submit', array(
-                    'label'     => 'black.bundle.admin.eventListener.setButtonsSubscriber.button.saveAndAdd.label',
-                    'attr'      => array(
-                        'class'     => 'btn btn-primary',
-                    )
+                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.saveAndAdd.label'
                 )
             )
             ->add('reset', 'reset', array(
-                    'label'     => 'black.bundle.admin.eventListener.setButtonsSubscriber.button.reset.label',
-                    'attr'      => array(
-                        'class'     => 'btn',
-                    )
+                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.reset.label'
                 )
             );
     }
 
     /**
-     * @param $form
+     * @param FormInterface $form
      */
-    private function addDeleteButton($form)
+    private function addDeleteButton(FormInterface $form)
     {
         $form
             ->add('delete', 'submit', array(
-                    'label'             => 'black.bundle.admin.eventListener.setButtonsSubscriber.button.delete.label',
+                    'label'             => 'black.bundle.common.eventListener.setButtonsSubscriber.button.delete.label',
                     'validation_groups' => false,
                     'attr'              => array(
                         'class'             => 'btn btn-danger'

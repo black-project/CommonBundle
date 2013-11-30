@@ -17,7 +17,7 @@ use Symfony\Component\Form\DataTransformerInterface;
  * Class ValuetoModelsOrNullTransformer
  *
  * @package Black\Bundle\CommonBundle\Form\Transformer
- * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @author  Boris Tacyniak <boris.tacyniak@viacesi.fr>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class ValuetoModelsOrNullTransformer implements DataTransformerInterface
@@ -69,6 +69,7 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
     {
         if (empty($data)) {
             return null;
+
         } elseif (is_array($data) || is_object($data)) {
 
             $collection = array();

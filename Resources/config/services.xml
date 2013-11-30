@@ -7,10 +7,12 @@
     <parameters>
         <parameter key="black_common.form.type.class.tag">Black\Bundle\CommonBundle\Form\Type\TagType</parameter>
         <parameter key="black_common.type.class.image">Black\Bundle\CommonBundle\Form\Extension\ImageTypeExtension</parameter>
-        <parameter key="black_common.controller.class.common">Black\Bundle\CommonBundle\Controller\CommonController</parameter>
+        <parameter key="black_common.form.event.button.class">Black\Bundle\CommonBundle\Form\EventListener\SetButtonsSubscriber</parameter>
     </parameters>
 
     <services>
+        <service id="black_common.form.event.button" class="%black_common.form.event.button.class%" />
+
         <service id="black_common.form.type.tag" class="%black_common.form.type.class.tag%">
             <tag name="form.type" alias="black_common_tag" />
         </service>
@@ -18,12 +20,5 @@
         <service id="black_common.image_type_extension" class="%black_common.type.class.image%" public="true">
             <tag name="form.type_extension" alias="file" />
         </service>
-
-        <service id="black_common.controller.common" class="%black_common.controller.class.common%" scope="request">
-            <argument type="service" id="request" />
-            <argument type="service" id="router" />
-            <argument type="service" id="session" />
-        </service>
-
     </services>
 </container>
