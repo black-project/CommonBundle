@@ -62,7 +62,7 @@ multiple keywords like tags, meta keywords...
 
 The TagType use the TextToTagTransformer who implode/explode comma-separated string.
 
-If you want a into the wild application, use the
+If you want an into the wild application, use the
 [XOXCO jQuery Tags Input](http://xoxco.com/projects/code/tagsinput/) with this type.
 
 ```php

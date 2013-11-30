@@ -54,24 +54,15 @@ class SetButtonsSubscriber implements EventSubscriberInterface
     {
         $form
             ->add('save', 'submit', array(
-                    'label'     => 'black.bundle.admin.eventListener.setButtonsSubscriber.button.save.label',
-                    'attr'      => array(
-                        'class'     => 'btn btn-success',
-                    )
+                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.save.label'
                 )
             )
             ->add('saveAndAdd', 'submit', array(
-                    'label'     => 'black.bundle.admin.eventListener.setButtonsSubscriber.button.saveAndAdd.label',
-                    'attr'      => array(
-                        'class'     => 'btn btn-primary',
-                    )
+                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.saveAndAdd.label'
                 )
             )
             ->add('reset', 'reset', array(
-                    'label'     => 'black.bundle.admin.eventListener.setButtonsSubscriber.button.reset.label',
-                    'attr'      => array(
-                        'class'     => 'btn',
-                    )
+                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.reset.label'
                 )
             );
     }
@@ -83,7 +74,7 @@ class SetButtonsSubscriber implements EventSubscriberInterface
     {
         $form
             ->add('delete', 'submit', array(
-                    'label'             => 'black.bundle.admin.eventListener.setButtonsSubscriber.button.delete.label',
+                    'label'             => 'black.bundle.common.eventListener.setButtonsSubscriber.button.delete.label',
                     'validation_groups' => false,
                     'attr'              => array(
                         'class'             => 'btn btn-danger'

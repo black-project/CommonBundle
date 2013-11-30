@@ -40,3 +40,14 @@ black:
                     telephone:
                         label: Numéro de Téléphone
 
+            eventListener:
+                setButtonsSubscriber:
+                    button:
+                        save:
+                            label: Enregistrer
+                        saveAndAdd:
+                            label: Enregistrer et créer
+                        reset:
+                            label: Annuler les modifications
+                        delete:
+                            label: Suppprimer

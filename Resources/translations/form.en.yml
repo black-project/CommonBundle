@@ -39,3 +39,15 @@ black:
                         label: Mobile number
                     telephone:
                         label: Telephone number
+
+            eventListener:
+                setButtonsSubscriber:
+                    button:
+                        save:
+                            label: Save
+                        saveAndAdd:
+                            label: Save and add
+                        reset:
+                            label: Reset changes
+                        delete:
+                            label: Delete
