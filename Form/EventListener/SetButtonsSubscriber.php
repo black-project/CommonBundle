@@ -14,6 +14,7 @@ namespace Black\Bundle\CommonBundle\Form\EventListener;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormInterface;
 
 /**
  * Class SetButtonsSubscriber
@@ -48,9 +49,9 @@ class SetButtonsSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * @param $form
+     * @param FormInterface $form
      */
-    private function addCreateButtons($form)
+    private function addCreateButtons(FormInterface $form)
     {
         $form
             ->add('save', 'submit', array(
@@ -68,9 +69,9 @@ class SetButtonsSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * @param $form
+     * @param FormInterface $form
      */
-    private function addDeleteButton($form)
+    private function addDeleteButton(FormInterface $form)
     {
         $form
             ->add('delete', 'submit', array(

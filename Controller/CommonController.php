@@ -11,7 +11,6 @@
 
 namespace Black\Bundle\CommonBundle\Controller;
 
-use JMS\DiExtraBundle\Annotation\Service;
 use Black\Bundle\CommonBundle\Doctrine\ManagerInterface;
 use Black\Bundle\CommonBundle\Form\Handler\HandlerInterface;
 use Symfony\Component\HttpFoundation\Request;
