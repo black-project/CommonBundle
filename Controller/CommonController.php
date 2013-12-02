@@ -25,6 +25,15 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 abstract class CommonController implements ControllerInterface
 {
     /**
+     * @var \Black\Bundle\CommonBundle\Configuration\Configuration
+     */
+    protected $configuration;
+    /**
+     * @var \Black\Bundle\CommonBundle\Form\Handler\HandlerInterface
+     */
+    protected $handler;
+
+    /**
      * @param Configuration    $configuration
      * @param HandlerInterface $handler
      */
