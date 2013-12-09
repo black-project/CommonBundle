@@ -64,22 +64,24 @@ abstract class CommonController implements ControllerInterface
     }
 
     /**
-     * Delete an existing object
+     * @param $value
      *
-     * @return mixed
+     * @return mixed|RedirectResponse
      */
     public function deleteAction($value)
     {
         $document   = $this->configuration->getManager()->findDocument($value);
 
         if (!$document) {
-            throw new $this->configuration->getException();
+            throw $this->configuration->getException();
         }
 
         $this->configuration->getManager()->remove($document);
         $this->configuration->getManager()->flush();
 
         $this->configuration->setFlash('success', 'Object was successfully removed');
+
+        return new RedirectResponse($this->handler->getUrl());
     }
 
     /**
@@ -106,7 +108,7 @@ abstract class CommonController implements ControllerInterface
         $document   = $this->configuration->getManager()->findDocument($value);
 
         if (!$document) {
-            throw new $this->configuration->getException();
+            throw $this->configuration->getException();
         }
 
         return array(
@@ -124,7 +126,7 @@ abstract class CommonController implements ControllerInterface
         $document = $this->configuration->getManager()->findDocument($value);
 
         if (!$document) {
-            throw new $this->configuration->getException();
+            throw $this->configuration->getException();
         }
 
         $process = $this->handler->process($document);
