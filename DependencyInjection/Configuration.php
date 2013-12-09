@@ -27,12 +27,25 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
+     * @var
+     */
+    private $alias;
+
+    /**
+     * @param string    $alias
+     */
+    public function __construct($alias)
+    {
+        $this->alias = $alias;
+    }
+
+    /**
      * {@inheritDoc}
      */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('black_common');
+        $rootNode = $treeBuilder->root($this->alias);
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
