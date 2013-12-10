@@ -16,6 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Black\Bundle\CommonBundle\Doctrine\ManagerInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * Class Configuration
@@ -157,5 +158,17 @@ class Configuration
     public function setFlash($type, $message)
     {
         return $this->session->getFlashBag()->add($type, $message);
+    }
+
+    /**
+     * @param       $route
+     * @param array $parameters
+     * @param       $referenceType
+     *
+     * @return mixed
+     */
+    public function generateUrl($route, $parameters = array(), $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH)
+    {
+        return $this->router->generate($route, $parameters, $referenceType);
     }
 } 

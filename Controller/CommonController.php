@@ -64,9 +64,12 @@ abstract class CommonController implements ControllerInterface
     }
 
     /**
+     * Delete an object
+     *
      * @param $value
      *
      * @return mixed|RedirectResponse
+     * @throws \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface
      */
     public function deleteAction($value)
     {
@@ -101,7 +104,10 @@ abstract class CommonController implements ControllerInterface
     /**
      * Show an object
      *
-     * @return mixed
+     * @param $value
+     *
+     * @return array|mixed
+     * @throws \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface
      */
     public function readAction($value)
     {
@@ -119,7 +125,10 @@ abstract class CommonController implements ControllerInterface
     /**
      * Update an existing object
      *
-     * @return mixed
+     * @param $value
+     *
+     * @return array|mixed|RedirectResponse
+     * @throws \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface
      */
     public function updateAction($value)
     {
