@@ -10,6 +10,7 @@
  */
 namespace Black\Bundle\CommonBundle;
 
+use Black\Bundle\CommonBundle\DependencyInjection\BlackCommonExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -21,4 +22,11 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class BlackCommonBundle extends Bundle
 {
+    /**
+     * @return BlackCommonExtension|null|\Symfony\Component\DependencyInjection\Extension\ExtensionInterface
+     */
+    public function getContainerExtension()
+    {
+        return new BlackCommonExtension();
+    }
 }
