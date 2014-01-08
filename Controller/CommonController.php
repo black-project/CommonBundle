@@ -64,30 +64,6 @@ abstract class CommonController implements ControllerInterface
     }
 
     /**
-     * Delete an object
-     *
-     * @param $value
-     *
-     * @return mixed|RedirectResponse
-     * @throws \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface
-     */
-    public function deleteAction($value)
-    {
-        $document   = $this->configuration->getManager()->findDocument($value);
-
-        if (!$document) {
-            throw $this->configuration->getException();
-        }
-
-        $this->configuration->getManager()->remove($document);
-        $this->configuration->getManager()->flush();
-
-        $this->configuration->setFlash('success', 'Object was successfully removed');
-
-        return new RedirectResponse($this->handler->getUrl());
-    }
-
-    /**
      * Create a list of objects
      *
      * @return mixed
@@ -148,5 +124,24 @@ abstract class CommonController implements ControllerInterface
             'document'  => $document,
             'form'      => $this->handler->getForm()->createView()
         );
+    }
+
+    /**
+     * Delete an existing object
+     *
+     * @return mixed
+     */
+    public function deleteAction($value)
+    {
+        $document   = $this->configuration->getManager()->findDocument($value);
+
+        if (!$document) {
+            throw new $this->configuration->getException();
+        }
+
+        $this->configuration->getManager()->remove($document);
+        $this->configuration->getManager()->flush();
+
+        $this->configuration->setFlash('success', 'Object was successfully removed');
     }
 }
