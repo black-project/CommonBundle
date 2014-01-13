@@ -51,6 +51,7 @@ abstract class CommonController implements ControllerInterface
     public function createAction()
     {
         $document   = $this->configuration->getManager()->createInstance();
+
         $process    = $this->handler->process($document);
 
         if ($process) {
@@ -61,30 +62,6 @@ abstract class CommonController implements ControllerInterface
             'document'  => $document,
             'form'      => $this->handler->getForm()->createView()
         );
-    }
-
-    /**
-     * Delete an object
-     *
-     * @param $value
-     *
-     * @return mixed|RedirectResponse
-     * @throws \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface
-     */
-    public function deleteAction($value)
-    {
-        $document   = $this->configuration->getManager()->findDocument($value);
-
-        if (!$document) {
-            throw $this->configuration->getException();
-        }
-
-        $this->configuration->getManager()->remove($document);
-        $this->configuration->getManager()->flush();
-
-        $this->configuration->setFlash('success', 'Object was successfully removed');
-
-        return new RedirectResponse($this->handler->getUrl());
     }
 
     /**
@@ -148,5 +125,25 @@ abstract class CommonController implements ControllerInterface
             'document'  => $document,
             'form'      => $this->handler->getForm()->createView()
         );
+    }
+
+    /**
+     * Delete an existing object
+     *
+     * @return mixed
+     */
+    public function deleteAction($value)
+    {
+        $document   = $this->configuration->getManager()->findDocument($value);
+
+        if (!$document) {
+            throw new $this->configuration->getException();
+        }
+
+        $this->configuration->getManager()->remove($document);
+        $this->configuration->getManager()->flush();
+
+        $this->configuration->setFlash('success', 'Object was successfully removed');
+        return new RedirectResponse($this->configuration->getRouter()->generate($this->configuration->getParameter('route')['index']));
     }
 }
