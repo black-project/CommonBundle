@@ -43,8 +43,9 @@ abstract class AdminCommonController implements ControllerInterface
     protected $handler;
 
     /**
-     * @param Configuration    $configuration
-     * @param HandlerInterface $handler
+     * @param Configuration         $configuration
+     * @param CsrfProviderInterface $csrf
+     * @param HandlerInterface      $handler
      */
     public function __construct
     (
@@ -111,11 +112,11 @@ abstract class AdminCommonController implements ControllerInterface
     }
 
     /**
-     * @param string $value
+     * Edit an object
+     *
+     * @param $value
+     *
      * @return array|RedirectResponse
-     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
-     * @throws AccessDeniedException
-     * @return array|\Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function editAction($value)
     {
@@ -154,6 +155,7 @@ abstract class AdminCommonController implements ControllerInterface
         }
         $documentManager->remove($document);
         $documentManager->flush();
+
         return true;
     }
 
@@ -175,6 +177,7 @@ abstract class AdminCommonController implements ControllerInterface
                 if ($deleteAction = self::deleteAction($value)) {
 
                     $this->configuration->setFlash('success', $params['trans']['success'][0]);
+
                     return new RedirectResponse($this->generateUrl($params['generateUrl']));
                 }
             }
@@ -219,11 +222,12 @@ abstract class AdminCommonController implements ControllerInterface
             $this->$method($id);
         }
 
-        if(sizeof($ids)>1){
+        if (sizeof($ids)>1) {
             $this->configuration->setFlash('success', $params['trans']['success'][1]);
-        }else{
+        } else {
             $this->configuration->setFlash('success', $params['trans']['success'][0]);
         }
+
         return new RedirectResponse($this->generateUrl('admin_page_index'));
     }
 
