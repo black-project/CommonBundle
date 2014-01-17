@@ -11,6 +11,7 @@
 
 namespace Black\Bundle\CommonBundle\Configuration;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ConfigurationInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;

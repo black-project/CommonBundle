@@ -13,6 +13,7 @@ namespace Black\Bundle\CommonBundle\Controller;
 
 use Black\Bundle\CommonBundle\Configuration\Configuration;
 use Black\Bundle\CommonBundle\Form\Handler\HandlerInterface;
+use Symfony\Component\Finder\Exception\OperationNotPermitedException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
@@ -20,6 +21,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
  *
  * @package Black\Bundle\CommonBundle\Controller
  * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @author  Sébastien Grans <sebastien@activcompany.fr>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 abstract class CommonController implements ControllerInterface
@@ -72,7 +74,6 @@ abstract class CommonController implements ControllerInterface
     public function indexAction()
     {
         $documents  = $this->configuration->getManager()->findDocuments();
-
         return array(
             'documents' => $documents
         );
@@ -95,7 +96,7 @@ abstract class CommonController implements ControllerInterface
         }
 
         return array(
-            'document'  => $document
+            'document' => $document
         );
     }
 
@@ -143,7 +144,29 @@ abstract class CommonController implements ControllerInterface
         $this->configuration->getManager()->remove($document);
         $this->configuration->getManager()->flush();
 
-        $this->configuration->setFlash('success', 'Object was successfully removed');
-        return new RedirectResponse($this->configuration->getRouter()->generate($this->configuration->getParameter('route')['index']));
+        $this->configuration->setFlash('success', $this->TransToFlash($document));
+
+        return new RedirectResponse
+        (
+            $this->configuration->getRouter()->generate($this->configuration->getParameter('route')['index'])
+        );
+    }
+
+    /**
+     * Transform a namespace of a object to a flash message code translation
+     *
+     * @param $object
+     * @return string
+     */
+    private function TransToFlash($object)
+    {
+        $string      = get_class($object);
+        $separator   = "\\";
+        $elements    = explode($separator, $string);
+        $bundleName  = preg_split('/(?=[A-Z])/',$elements[2]);
+        $elements[2] = $bundleName[1];
+        $message     = "$elements[0].$elements[1].$elements[2].$elements[4].success.delete";
+
+        return strtolower($message);
     }
 }
