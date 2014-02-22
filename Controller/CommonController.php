@@ -74,6 +74,7 @@ abstract class CommonController implements ControllerInterface
     public function indexAction()
     {
         $documents  = $this->configuration->getManager()->findDocuments();
+
         return array(
             'documents' => $documents
         );
@@ -144,7 +145,7 @@ abstract class CommonController implements ControllerInterface
         $this->configuration->getManager()->remove($document);
         $this->configuration->getManager()->flush();
 
-        $this->configuration->setFlash('success', $this->TransToFlash($document));
+        $this->configuration->setFlash('success', 'Object was successfull removed');
 
         return new RedirectResponse
         (
@@ -169,4 +170,5 @@ abstract class CommonController implements ControllerInterface
 
         return strtolower($message);
     }
+
 }

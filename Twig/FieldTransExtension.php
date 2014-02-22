@@ -67,7 +67,7 @@ class FieldTransExtension extends \Twig_Extension
         } else {
             $parent_class = get_parent_class($class_name);
 
-            return $parent_class;
+                return $parent_class;
         }
     }
 
