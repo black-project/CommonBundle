@@ -53,7 +53,6 @@ abstract class CommonController implements ControllerInterface
     public function createAction()
     {
         $document   = $this->configuration->getManager()->createInstance();
-
         $process    = $this->handler->process($document);
 
         if ($process) {
@@ -132,7 +131,9 @@ abstract class CommonController implements ControllerInterface
     /**
      * Delete an existing object
      *
-     * @return mixed
+     * @param $value
+     *
+     * @return mixed|RedirectResponse
      */
     public function deleteAction($value)
     {
@@ -145,11 +146,13 @@ abstract class CommonController implements ControllerInterface
         $this->configuration->getManager()->remove($document);
         $this->configuration->getManager()->flush();
 
+
         $this->configuration->setFlash('success', 'Object was successfull removed');
 
         return new RedirectResponse
         (
             $this->configuration->getRouter()->generate($this->configuration->getParameter('route')['index'])
         );
+
     }
 }
