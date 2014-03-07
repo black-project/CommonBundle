@@ -21,9 +21,5 @@
             <tag name="form.type_extension" alias="file" />
         </service>
 
-        <service id="black.twig.transfield_extension" class="Black\Bundle\CommonBundle\Twig\FieldTransExtension">
-            <argument type="service" id="translator.default"></argument>
-            <tag name="twig.extension" />
-        </service>
     </services>
 </container>
