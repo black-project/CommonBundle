@@ -152,23 +152,4 @@ abstract class CommonController implements ControllerInterface
             $this->configuration->getRouter()->generate($this->configuration->getParameter('route')['index'])
         );
     }
-
-    /**
-     * Transform a namespace of a object to a flash message code translation
-     *
-     * @param $object
-     * @return string
-     */
-    private function TransToFlash($object)
-    {
-        $string      = get_class($object);
-        $separator   = "\\";
-        $elements    = explode($separator, $string);
-        $bundleName  = preg_split('/(?=[A-Z])/',$elements[2]);
-        $elements[2] = $bundleName[1];
-        $message     = "$elements[0].$elements[1].$elements[2].$elements[4].success.delete";
-
-        return strtolower($message);
-    }
-
 }
