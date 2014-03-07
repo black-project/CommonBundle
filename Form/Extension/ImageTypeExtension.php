@@ -36,6 +36,7 @@ class ImageTypeExtension extends AbstractTypeExtension
         $view->vars['image_url'] = null;
 
         if (array_key_exists('image_path', $options)) {
+
             $parentData = $form->getParent()->getData();
 
             if (null !== $parentData) {

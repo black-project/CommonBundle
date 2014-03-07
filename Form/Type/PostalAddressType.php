@@ -108,8 +108,8 @@ class PostalAddressType extends AbstractType
                     'required'      => false
                 )
             )
-            ->add('faxNumber', 'text', array(
-                    'label'         => 'black.bundle.common.type.postal.fax.label',
+            ->add('telephone', 'text', array(
+                    'label'         => 'black.bundle.common.type.postal.telephone.label',
                     'required'      => false
                 )
             )
@@ -118,8 +118,8 @@ class PostalAddressType extends AbstractType
                     'required'      => false
                 )
             )
-            ->add('telephone', 'text', array(
-                    'label'         => 'black.bundle.common.type.postal.telephone.label',
+            ->add('faxNumber', 'text', array(
+                    'label'         => 'black.bundle.common.type.postal.fax.label',
                     'required'      => false
                 )
             )

@@ -38,7 +38,7 @@ black:
                     mobile:
                         label: Numéro de portable
                     telephone:
-                        label: Numéro de Téléphone
+                        label: Numéro de téléphone
 
             eventListener:
                 setButtonsSubscriber:

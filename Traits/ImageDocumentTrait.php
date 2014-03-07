@@ -98,4 +98,4 @@ trait ImageDocumentTrait
 
         $this->image = null;
     }
-} 
+}
