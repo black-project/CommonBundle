@@ -11,7 +11,7 @@ black:
                 postal:
                     type:
                         empty: Choisir une valeur
-                        label: Point de contact
+                        label: Type d'adresse
                     name:
                         label: Nom
                     description:
