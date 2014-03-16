@@ -50,4 +50,4 @@ black:
                         reset:
                             label: Annuler les modifications
                         delete:
-                            label: Suppprimer
+                            label: Supprimer
