@@ -11,6 +11,8 @@
 
 namespace Black\Bundle\CommonBundle\Form\Transformer;
 
+use Black\Bundle\CommonBundle\Doctrine\ManagerInterface;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Form\DataTransformerInterface;
 
 /**
@@ -30,7 +32,7 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
     /**
      * @param ObjectManager $manager
      */
-    public function __construct($manager)
+    public function __construct(ManagerInterface $manager)
     {
         $this->manager = $manager;
     }
@@ -44,20 +46,21 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
     {
         if (null === $data) {
             return null;
-        } elseif (is_array($data) || is_object($data)) {
+        }
 
+        if (is_array($data) || is_object($data)) {
             $collection = array();
 
             foreach ($data as $id) {
-                $collection[] = $this->manager->getRepository()->findOneBy(array('id' => $id));
+                $collection[] = $this->manager->getRepository()->findOneBy(['id' => $id]);
             }
 
             return $collection;
-        } else {
-            $model = $this->manager->getRepository()->findOneBy(array('id' => $data));
-
-            return  $model;
         }
+
+        $model = $this->manager->getRepository()->findOneBy(['id' => $data]);
+
+        return $model;
     }
 
     /**
@@ -69,9 +72,9 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
     {
         if (empty($data)) {
             return null;
+        }
 
-        } elseif (is_array($data) || is_object($data)) {
-
+        if (is_array($data) || is_object($data)) {
             $collection = array();
 
             if (in_array('getId', get_class_methods($data))) {
@@ -83,8 +86,8 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
             }
 
             return $collection;
-        } else {
-            return $data;
         }
+
+        return $data;
     }
 }

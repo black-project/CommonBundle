@@ -20,20 +20,5 @@ namespace Black\Bundle\CommonBundle\Form\Handler;
  */
 interface HandlerInterface
 {
-    /**
-     * @param $object
-     *
-     * @return mixed
-     */
-    public function process($object);
 
-    /**
-     * @return mixed
-     */
-    public function getForm();
-
-    /**
-     * @return mixed
-     */
-    public function getUrl();
 }

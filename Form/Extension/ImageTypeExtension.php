@@ -40,8 +40,8 @@ class ImageTypeExtension extends AbstractTypeExtension
             $parentData = $form->getParent()->getData();
 
             if (null !== $parentData) {
-                $accessor   = PropertyAccess::createPropertyAccessor();
-                $imageUrl   = $accessor->getValue($parentData, $options['image_path']);
+                $accessor = PropertyAccess::createPropertyAccessor();
+                $imageUrl = $accessor->getValue($parentData, $options['image_path']);
             } else {
                 $imageUrl = null;
             }

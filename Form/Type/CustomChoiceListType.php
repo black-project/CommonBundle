@@ -44,8 +44,8 @@ class CustomChoiceListType extends AbstractType
      */
     public function __construct($choiceList, $choiceListName)
     {
-        $this->choiceList       = $choiceList;
-        $this->choiceListName   = $choiceListName;
+        $this->choiceList     = $choiceList;
+        $this->choiceListName = $choiceListName;
     }
 
     /**
@@ -82,9 +82,7 @@ class CustomChoiceListType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-                'choice_list' => $this->choiceList,
-            ));
+        $resolver->setDefaults(['choice_list' => $this->choiceList]);
     }
 
     /**

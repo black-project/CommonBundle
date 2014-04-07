@@ -42,20 +42,6 @@ interface ManagerInterface
     public function getRepository();
 
     /**
-     * @param $object
-     *
-     * @return mixed
-     */
-    public function persist($object);
-
-    /**
-     * @param $object
-     *
-     * @return mixed
-     */
-    public function remove($object);
-
-    /**
      * Flush the curent manager
      *
      * @return mixed

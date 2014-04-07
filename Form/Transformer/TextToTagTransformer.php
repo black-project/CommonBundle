@@ -46,7 +46,7 @@ class TextToTagTransformer implements DataTransformerInterface
     public function transform($keywords)
     {
         if (null === $keywords) {
-            return;
+            return false;
         }
 
         $keywords = implode(',', $keywords);

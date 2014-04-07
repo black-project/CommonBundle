@@ -38,14 +38,9 @@ class SetButtonsSubscriber implements EventSubscriberInterface
      */
     public function preSetData(FormEvent $event)
     {
-        $data = $event->getData();
         $form = $event->getForm();
 
         $this->addCreateButtons($form);
-
-        if ($data && $data->getId()) {
-            $this->addDeleteButton($form);
-        }
     }
 
     /**
@@ -67,21 +62,4 @@ class SetButtonsSubscriber implements EventSubscriberInterface
                 )
             );
     }
-
-    /**
-     * @param FormInterface $form
-     */
-    private function addDeleteButton(FormInterface $form)
-    {
-        $form
-            ->add('delete', 'submit', array(
-                    'label'             => 'black.bundle.common.eventListener.setButtonsSubscriber.button.delete.label',
-                    'validation_groups' => false,
-                    'attr'              => array(
-                        'class'             => 'btn btn-danger'
-                    )
-                )
-            );
-    }
-
 }
