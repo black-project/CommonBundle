@@ -17,18 +17,16 @@ use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormInterface;
 
 /**
- * SetButtonsSubscriber add three buttons for your FormType.
+ * SetSaveButtonSubscriber add "save" button for your FormType.
  *
  * @package Black\Bundle\CommonBundle\EventListener
  * @author  Alexandre Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
-class SetButtonsSubscriber implements EventSubscriberInterface
+class SetSaveButtonSubscriber implements EventSubscriberInterface
 {
     /**
-     * List events for this subscriber
-     *
-     * @return array
+     * {@inheritDoc}
      */
     public static function getSubscribedEvents()
     {
@@ -57,14 +55,6 @@ class SetButtonsSubscriber implements EventSubscriberInterface
         $form
             ->add('save', 'submit', array(
                     'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.save.label'
-                )
-            )
-            ->add('saveAndAdd', 'submit', array(
-                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.saveAndAdd.label'
-                )
-            )
-            ->add('reset', 'reset', array(
-                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.reset.label'
                 )
             );
     }

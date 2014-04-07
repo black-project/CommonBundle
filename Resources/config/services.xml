@@ -5,21 +5,29 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="black_common.form.type.class.tag">Black\Bundle\CommonBundle\Form\Type\TagType</parameter>
+        <parameter key="black_common.form.type.tag.class">Black\Bundle\CommonBundle\Form\Type\TagType</parameter>
+        <parameter key="black_common.form.type.tag.name">black_common_tag</parameter>
+
+
         <parameter key="black_common.type.class.image">Black\Bundle\CommonBundle\Form\Extension\ImageTypeExtension</parameter>
-        <parameter key="black_common.form.event.button.class">Black\Bundle\CommonBundle\Form\EventListener\SetButtonsSubscriber</parameter>
+
+        <parameter key="black_common.form.event.button.save.class">Black\Bundle\CommonBundle\Form\EventListener\SetSaveButtonSubscriber</parameter>
+        <parameter key="black_common.form.event.button.save_and_add.class">Black\Bundle\CommonBundle\Form\EventListener\SetSaveAndAddButtonSubscriber</parameter>
+        <parameter key="black_common.form.event.button.reset.class">Black\Bundle\CommonBundle\Form\EventListener\SetResetButtonSubscriber</parameter>
     </parameters>
 
     <services>
-        <service id="black_common.form.event.button" class="%black_common.form.event.button.class%" />
-
-        <service id="black_common.form.type.tag" class="%black_common.form.type.class.tag%">
-            <tag name="form.type" alias="black_common_tag" />
+        <service id="black_common.form.type.tag" class="%black_common.form.type.tag.class%">
+            <argument>%black_common.form.type.tag.name%</argument>
+            <tag name="form.type" alias="%black_common.form.type.tag.name%" />
         </service>
 
         <service id="black_common.image_type_extension" class="%black_common.type.class.image%" public="true">
             <tag name="form.type_extension" alias="file" />
         </service>
 
+        <service id="black_common.form.event.button.save" class="%black_common.form.event.button.save.class%" />
+        <service id="black_common.form.event.button.save_and_add" class="%black_common.form.event.button.save_and_add.class%" />
+        <service id="black_common.form.event.button.reset" class="%black_common.form.event.button.reset.class%" />
     </services>
 </container>

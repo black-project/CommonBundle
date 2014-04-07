@@ -25,6 +25,20 @@ use Symfony\Component\Form\FormBuilderInterface;
 class TagType extends AbstractType
 {
     /**
+     * @var
+     */
+    protected $name;
+
+    /**
+     * Construct the type with his name
+     *
+     * @param string $name
+     */
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+    /**
      * {@inheritDoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -38,7 +52,7 @@ class TagType extends AbstractType
      */
     public function getName()
     {
-        return 'black_common_tag';
+        return $this->name;
     }
 
     /**
