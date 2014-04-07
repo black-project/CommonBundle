@@ -18,7 +18,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 
 /**
- * Class ImageTypeExtension
+ * This extension add image option for create a preview near the upload form type
  *
  * @package Black\Bundle\CommonBundle\Form\Extension
  * @author  Alexandre Balmes <albalmes@gmail.com>
@@ -27,16 +27,13 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 class ImageTypeExtension extends AbstractTypeExtension
 {
     /**
-     * @param FormView      $view
-     * @param FormInterface $form
-     * @param array         $options
+     * {@inheritdoc}
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['image_url'] = null;
 
         if (array_key_exists('image_path', $options)) {
-
             $parentData = $form->getParent()->getData();
 
             if (null !== $parentData) {
@@ -51,7 +48,7 @@ class ImageTypeExtension extends AbstractTypeExtension
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getExtendedType()
     {
@@ -59,7 +56,7 @@ class ImageTypeExtension extends AbstractTypeExtension
     }
 
     /**
-     * @param OptionsResolverInterface $resolver
+     * {@inheritdoc}
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {

@@ -12,11 +12,11 @@
 namespace Black\Bundle\CommonBundle\Form\Transformer;
 
 use Black\Bundle\CommonBundle\Doctrine\ManagerInterface;
-use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Form\DataTransformerInterface;
 
 /**
- * Class ValuetoModelsOrNullTransformer
+ * ValuetoModelsOrNullTransformer transfom/reverse data from collection to an array.
+ * It work both with ORM or ODM.
  *
  * @package Black\Bundle\CommonBundle\Form\Transformer
  * @author  Boris Tacyniak <boris.tacyniak@viacesi.fr>
@@ -30,7 +30,9 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
     protected $manager;
 
     /**
-     * @param ObjectManager $manager
+     * Construct the Transformer
+     *
+     * @param ManagerInterface $manager
      */
     public function __construct(ManagerInterface $manager)
     {
@@ -38,9 +40,7 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
     }
 
     /**
-     * @param mixed $data
-     *
-     * @return mixed
+     * {@inheritdoc}
      */
     public function reverseTransform($data)
     {
@@ -64,9 +64,7 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
     }
 
     /**
-     * @param mixed $data
-     *
-     * @return array|mixed
+     * {@inheritdoc}
      */
     public function transform($data)
     {

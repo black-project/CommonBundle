@@ -17,7 +17,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Black\Bundle\CommonBundle\Form\Transformer\ValuetoModelsOrNullTransformer;
 
 /**
- * Class CustomChoiceListType
+ * CustomChoiceListType create a Choice list
  *
  * @package Black\Bundle\CommonBundle\Form\Type
  * @author  Alexandre Balmes <albalmes@gmail.com>
@@ -29,18 +29,22 @@ class CustomChoiceListType extends AbstractType
      * @var
      */
     protected $choiceList;
+
     /**
      * @var
      */
     protected $choiceListName;
+
     /**
      * @var
      */
     protected $manager;
 
     /**
-     * @param $choiceList
-     * @param $choiceListName
+     * Construct the ChoiceList
+     *
+     * @param string $choiceList
+     * @param string $choiceListName
      */
     public function __construct($choiceList, $choiceListName)
     {
@@ -49,8 +53,7 @@ class CustomChoiceListType extends AbstractType
     }
 
     /**
-     * @param FormBuilderInterface $builder
-     * @param array                $options
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -86,7 +89,9 @@ class CustomChoiceListType extends AbstractType
     }
 
     /**
-     * @param $manager
+     * Set the manager for the Choice List
+     *
+     * @param string $manager
      */
     public function setManager($manager)
     {

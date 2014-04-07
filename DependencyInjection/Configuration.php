@@ -27,12 +27,14 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
-     * @var
+     * @var string
      */
     private $alias;
 
     /**
-     * @param string    $alias
+     * Construct the Configuration with bundle alias
+     *
+     * @param $alias
      */
     public function __construct($alias)
     {

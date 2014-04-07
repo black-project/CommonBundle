@@ -1,13 +1,6 @@
 black:
     bundle:
         common:
-            choice:
-                address:
-                    principal: Principal
-                    home: Home
-                    work: Work
-                    other: Other
-
             eventListener:
                 setButtonsSubscriber:
                     button:

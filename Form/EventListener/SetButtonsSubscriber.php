@@ -17,7 +17,7 @@ use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormInterface;
 
 /**
- * Class SetButtonsSubscriber
+ * SetButtonsSubscriber add three buttons for your FormType.
  *
  * @package Black\Bundle\CommonBundle\EventListener
  * @author  Alexandre Balmes <albalmes@gmail.com>
@@ -26,6 +26,8 @@ use Symfony\Component\Form\FormInterface;
 class SetButtonsSubscriber implements EventSubscriberInterface
 {
     /**
+     * List events for this subscriber
+     *
      * @return array
      */
     public static function getSubscribedEvents()
@@ -34,6 +36,8 @@ class SetButtonsSubscriber implements EventSubscriberInterface
     }
 
     /**
+     * Pre set Data form the subscriber and add buttons
+     *
      * @param FormEvent $event
      */
     public function preSetData(FormEvent $event)
@@ -44,6 +48,8 @@ class SetButtonsSubscriber implements EventSubscriberInterface
     }
 
     /**
+     * Add the buttons
+     *
      * @param FormInterface $form
      */
     private function addCreateButtons(FormInterface $form)

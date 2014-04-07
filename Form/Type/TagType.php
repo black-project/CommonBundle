@@ -16,7 +16,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 /**
- * Class TagType
+ * TagType create a new type for TextToTagTransformer
  *
  * @package Black\Bundle\CommonBundle\Form\Type
  * @author  Alexandre Balmes <albalmes@gmail.com>
@@ -25,8 +25,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 class TagType extends AbstractType
 {
     /**
-     * @param FormBuilderInterface $builder
-     * @param array                $options
+     * {@inheritDoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -35,7 +34,7 @@ class TagType extends AbstractType
     }
 
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getName()
     {
@@ -43,7 +42,7 @@ class TagType extends AbstractType
     }
 
     /**
-     * @return null|string|\Symfony\Component\Form\FormTypeInterface
+     * {@inheritDoc}
      */
     public function getParent()
     {

@@ -14,7 +14,7 @@ namespace Black\Bundle\CommonBundle\Form\Transformer;
 use Symfony\Component\Form\DataTransformerInterface;
 
 /**
- * Class TextToTagTransformer
+ * Text to tag transformer transform/reverse an array to comma-separated keywords
  *
  * @package Black\Bundle\CommonBundle\Form\Transformer
  * @author  Alexandre Balmes <albalmes@gmail.com>
@@ -23,9 +23,7 @@ use Symfony\Component\Form\DataTransformerInterface;
 class TextToTagTransformer implements DataTransformerInterface
 {
     /**
-     * @param mixed $keywords
-     *
-     * @return mixed|void
+     * {@inheritdoc}
      */
     public function reverseTransform($keywords)
     {
@@ -39,9 +37,7 @@ class TextToTagTransformer implements DataTransformerInterface
     }
 
     /**
-     * @param mixed $keywords
-     *
-     * @return mixed|void
+     * {@inheritdoc}
      */
     public function transform($keywords)
     {

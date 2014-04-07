@@ -15,7 +15,8 @@ use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface;
 
 /**
- * Class ValuetoChoiceOrTextTransformer
+ * ValueToChoiceOrTextTransformer save the content of TextType value if "other" is selected.
+ * Otherwise, this transformer save the value of the ChoiceType
  *
  * @package Black\Bundle\CommonBundle\Form\Transformer
  * @author  Boris Tacyniak <boris.tacyniak@viacesi.fr>
@@ -24,11 +25,13 @@ use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface;
 class ValuetoChoiceOrTextTransformer implements DataTransformerInterface
 {
     /**
-     * @var
+     * @var array
      */
     protected $choices;
 
     /**
+     * Construct the transformer
+     *
      * @param ChoiceListInterface $choices
      */
     public function __construct(ChoiceListInterface $choices)
@@ -37,9 +40,7 @@ class ValuetoChoiceOrTextTransformer implements DataTransformerInterface
     }
 
     /**
-     * @param mixed $data
-     *
-     * @return mixed
+     * {@inheritDoc}
      */
     public function reverseTransform($data)
     {
@@ -51,9 +52,7 @@ class ValuetoChoiceOrTextTransformer implements DataTransformerInterface
     }
 
     /**
-     * @param mixed $data
-     *
-     * @return array|mixed
+     * {@inheritDoc}
      */
     public function transform($data)
     {
