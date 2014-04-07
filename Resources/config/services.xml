@@ -20,5 +20,6 @@
         <service id="black_common.image_type_extension" class="%black_common.type.class.image%" public="true">
             <tag name="form.type_extension" alias="file" />
         </service>
+
     </services>
 </container>

@@ -13,6 +13,7 @@ namespace Black\Bundle\CommonBundle\Controller;
 
 use Black\Bundle\CommonBundle\Configuration\Configuration;
 use Black\Bundle\CommonBundle\Form\Handler\HandlerInterface;
+use Symfony\Component\Finder\Exception\OperationNotPermitedException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
@@ -20,6 +21,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
  *
  * @package Black\Bundle\CommonBundle\Controller
  * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @author  Sébastien Grans <sebastien@activcompany.fr>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 abstract class CommonController implements ControllerInterface
@@ -94,7 +96,7 @@ abstract class CommonController implements ControllerInterface
         }
 
         return array(
-            'document'  => $document
+            'document' => $document
         );
     }
 
@@ -144,8 +146,13 @@ abstract class CommonController implements ControllerInterface
         $this->configuration->getManager()->remove($document);
         $this->configuration->getManager()->flush();
 
-        $this->configuration->setFlash('success', 'Object was successfully removed');
 
-        return new RedirectResponse($this->configuration->getRouter()->generate($this->configuration->getParameter('route')['index']));
+        $this->configuration->setFlash('success', 'Object was successfull removed');
+
+        return new RedirectResponse
+        (
+            $this->configuration->getRouter()->generate($this->configuration->getParameter('route')['index'])
+        );
+
     }
 }
