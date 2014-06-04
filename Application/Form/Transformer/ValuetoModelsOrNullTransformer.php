@@ -11,14 +11,14 @@
 
 namespace Black\Bundle\CommonBundle\Application\Form\Transformer;
 
-use Black\Bundle\CommonBundle\Application\Doctrine\ManagerInterface;
+use Black\Bundle\CommonBundle\Infrastructure\Doctrine\ManagerInterface;
 use Symfony\Component\Form\DataTransformerInterface;
 
 /**
  * Class ValuetoModelsOrNullTransformer
  *
  * ValuetoModelsOrNullTransformer transfom/reverse data from collection to an array.
- * It work both with ORM or ODM.
+ * It works both with ORM or ODM.
  *
  * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT

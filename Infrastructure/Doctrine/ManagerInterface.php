@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\Application\Doctrine;
+namespace Black\Bundle\CommonBundle\Infrastructure\Doctrine;
 
 /**
- * Interface ManagerInterface
+ * Interface InfrastructureInterface
  *
  * @package Black\Bundle\CommonBundle\Application\Doctrine
  */
