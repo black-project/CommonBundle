@@ -9,14 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\Form\Handler;
+namespace Black\Bundle\CommonBundle\Application\Form\Handler;
 
 /**
- * Class HandlerInterface
+ * Interface HandlerInterface
  *
- * @package Black\Bundle\CommonBundle\Form\Handler
- * @author  Alexandre Balmes <albalmes@gmail.com>
- * @license http://opensource.org/licenses/mit-license.php MIT
+ * @package Black\Bundle\CommonBundle\Application\Form\Handler
  */
 interface HandlerInterface
 {

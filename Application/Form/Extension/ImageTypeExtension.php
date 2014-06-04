@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\Form\Extension;
+namespace Black\Bundle\CommonBundle\Application\Form\Extension;
 
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormInterface;
@@ -18,10 +18,11 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 
 /**
+ * Class ImageTypeExtension
+ *
  * This extension add image option for create a preview near the upload form type
  *
- * @package Black\Bundle\CommonBundle\Form\Extension
- * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class ImageTypeExtension extends AbstractTypeExtension

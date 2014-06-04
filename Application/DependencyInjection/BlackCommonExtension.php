@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\DependencyInjection;
+namespace Black\Bundle\CommonBundle\Application\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -17,12 +17,13 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
 /**
+ * Class BlackCommonExtension
+ *
  * This is the class that loads and manages your bundle configuration
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  *
- * @package Black\Bundle\CommonBundle
- * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class BlackCommonExtension extends Extension

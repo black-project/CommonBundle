@@ -9,15 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\Form\Transformer;
+namespace Black\Bundle\CommonBundle\Application\Form\Transformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
 
 /**
+ * Class TextToTagTransformer
+ *
  * Text to tag transformer transform/reverse an array to comma-separated keywords
  *
- * @package Black\Bundle\CommonBundle\Form\Transformer
- * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class TextToTagTransformer implements DataTransformerInterface

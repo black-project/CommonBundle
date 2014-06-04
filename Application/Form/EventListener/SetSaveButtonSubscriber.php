@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\Form\EventListener;
+namespace Black\Bundle\CommonBundle\Application\Form\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\FormEvents;
@@ -17,13 +17,14 @@ use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormInterface;
 
 /**
- * SetSaveAndAddButtonSubscriber add "save and add" button for your FormType.
+ * Class SetSaveButtonSubscriber
  *
- * @package Black\Bundle\CommonBundle\EventListener
- * @author  Alexandre Balmes <albalmes@gmail.com>
+ * SetSaveButtonSubscriber add "save" button for your FormType.
+ *
+ * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
-class SetSaveAndAddButtonSubscriber implements EventSubscriberInterface
+class SetSaveButtonSubscriber implements EventSubscriberInterface
 {
     /**
      * {@inheritDoc}
@@ -42,19 +43,19 @@ class SetSaveAndAddButtonSubscriber implements EventSubscriberInterface
     {
         $form = $event->getForm();
 
-        $this->addSaveAndAddButton($form);
+        $this->addCreateButtons($form);
     }
 
     /**
-     * Add the button
+     * Add the buttons
      *
      * @param FormInterface $form
      */
-    private function addSaveAndAddButton(FormInterface $form)
+    private function addCreateButtons(FormInterface $form)
     {
         $form
-            ->add('saveAndAdd', 'submit', array(
-                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.saveAndAdd.label'
+            ->add('save', 'submit', array(
+                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.save.label'
                 )
             );
     }

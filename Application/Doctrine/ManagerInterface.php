@@ -9,14 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\Doctrine;
+namespace Black\Bundle\CommonBundle\Application\Doctrine;
 
 /**
- * Class ManagerInterface
+ * Interface ManagerInterface
  *
- * @package Black\Bundle\CommonBundle\Manager
- * @author  Alexandre Balmes <albalmes@gmail.com>
- * @license http://opensource.org/licenses/mit-license.php MIT
+ * @package Black\Bundle\CommonBundle\Application\Doctrine
  */
 interface ManagerInterface
 {

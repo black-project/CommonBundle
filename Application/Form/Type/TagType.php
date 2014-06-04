@@ -11,15 +11,16 @@
 
 namespace Black\Bundle\CommonBundle\Form\Type;
 
-use Black\Bundle\CommonBundle\Form\Transformer\TextToTagTransformer;
+use Black\Bundle\CommonBundle\Application\Form\Transformer\TextToTagTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 /**
+ * Class TagType
+ *
  * TagType create a new type for TextToTagTransformer
  *
- * @package Black\Bundle\CommonBundle\Form\Type
- * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class TagType extends AbstractType

@@ -9,18 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\Form\Type;
+namespace Black\Bundle\CommonBundle\Application\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\FormBuilderInterface;
-use Black\Bundle\CommonBundle\Form\Transformer\ValuetoModelsOrNullTransformer;
+use Black\Bundle\CommonBundle\Application\Form\Transformer\ValuetoModelsOrNullTransformer;
 
 /**
+ * Class CustomChoiceListType
+ *
  * CustomChoiceListType create a Choice list
  *
- * @package Black\Bundle\CommonBundle\Form\Type
- * @author  Alexandre Balmes <albalmes@gmail.com>
+ * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class CustomChoiceListType extends AbstractType

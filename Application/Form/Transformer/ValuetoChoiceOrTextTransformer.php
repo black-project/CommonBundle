@@ -9,17 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\Form\Transformer;
+namespace Black\Bundle\CommonBundle\Application\Form\Transformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface;
 
 /**
+ * Class ValuetoChoiceOrTextTransformer
+ *
  * ValueToChoiceOrTextTransformer save the content of TextType value if "other" is selected.
  * Otherwise, this transformer save the value of the ChoiceType
  *
- * @package Black\Bundle\CommonBundle\Form\Transformer
- * @author  Boris Tacyniak <boris.tacyniak@viacesi.fr>
+ * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class ValuetoChoiceOrTextTransformer implements DataTransformerInterface

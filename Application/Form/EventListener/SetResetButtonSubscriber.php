@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\Form\EventListener;
+namespace Black\Bundle\CommonBundle\Application\Form\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\FormEvents;
@@ -17,16 +17,19 @@ use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormInterface;
 
 /**
- * SetSaveButtonSubscriber add "save" button for your FormType.
+ * Class SetResetButtonSubscriber
  *
- * @package Black\Bundle\CommonBundle\EventListener
- * @author  Alexandre Balmes <albalmes@gmail.com>
+ * SetResetButtonSubscriber add "reset" button for your FormType.
+ *
+ * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
-class SetSaveButtonSubscriber implements EventSubscriberInterface
+class SetResetButtonSubscriber implements EventSubscriberInterface
 {
     /**
-     * {@inheritDoc}
+     * List events for this subscriber
+     *
+     * @return array
      */
     public static function getSubscribedEvents()
     {
@@ -34,7 +37,7 @@ class SetSaveButtonSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * Pre set Data form the subscriber and add buttons
+     * Pre set Data form the subscriber and add button
      *
      * @param FormEvent $event
      */
@@ -42,19 +45,19 @@ class SetSaveButtonSubscriber implements EventSubscriberInterface
     {
         $form = $event->getForm();
 
-        $this->addCreateButtons($form);
+        $this->addResetButton($form);
     }
 
     /**
-     * Add the buttons
+     * Add the button
      *
      * @param FormInterface $form
      */
-    private function addCreateButtons(FormInterface $form)
+    private function addResetButton(FormInterface $form)
     {
         $form
-            ->add('save', 'submit', array(
-                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.save.label'
+            ->add('reset', 'reset', array(
+                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.reset.label'
                 )
             );
     }

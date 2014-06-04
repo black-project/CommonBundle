@@ -9,17 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\Form\Transformer;
+namespace Black\Bundle\CommonBundle\Application\Form\Transformer;
 
-use Black\Bundle\CommonBundle\Doctrine\ManagerInterface;
+use Black\Bundle\CommonBundle\Application\Doctrine\ManagerInterface;
 use Symfony\Component\Form\DataTransformerInterface;
 
 /**
+ * Class ValuetoModelsOrNullTransformer
+ *
  * ValuetoModelsOrNullTransformer transfom/reverse data from collection to an array.
  * It work both with ORM or ODM.
  *
- * @package Black\Bundle\CommonBundle\Form\Transformer
- * @author  Boris Tacyniak <boris.tacyniak@viacesi.fr>
+ * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class ValuetoModelsOrNullTransformer implements DataTransformerInterface
