@@ -31,7 +31,7 @@ class SetSaveButtonSubscriber implements EventSubscriberInterface
      */
     public static function getSubscribedEvents()
     {
-        return array(FormEvents::PRE_SET_DATA => 'preSetData');
+        return [FormEvents::PRE_SET_DATA => 'preSetData'];
     }
 
     /**
@@ -54,9 +54,9 @@ class SetSaveButtonSubscriber implements EventSubscriberInterface
     private function addCreateButtons(FormInterface $form)
     {
         $form
-            ->add('save', 'submit', array(
-                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.save.label'
-                )
+            ->add('save', 'submit', [
+                    'label' => 'black.bundle.common.eventListener.setButtonsSubscriber.button.save.label'
+                ]
             );
     }
 }

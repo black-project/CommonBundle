@@ -33,7 +33,7 @@ class SetResetButtonSubscriber implements EventSubscriberInterface
      */
     public static function getSubscribedEvents()
     {
-        return array(FormEvents::PRE_SET_DATA => 'preSetData');
+        return [FormEvents::PRE_SET_DATA => 'preSetData'];
     }
 
     /**
@@ -56,9 +56,9 @@ class SetResetButtonSubscriber implements EventSubscriberInterface
     private function addResetButton(FormInterface $form)
     {
         $form
-            ->add('reset', 'reset', array(
-                    'label'     => 'black.bundle.common.eventListener.setButtonsSubscriber.button.reset.label'
-                )
+            ->add('reset', 'reset', [
+                    'label' => 'black.bundle.common.eventListener.setButtonsSubscriber.button.reset.label'
+                ]
             );
     }
 }

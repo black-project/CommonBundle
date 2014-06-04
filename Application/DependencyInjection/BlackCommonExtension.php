@@ -34,11 +34,11 @@ class BlackCommonExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration($this->getAlias());
-        $config        = $this->processConfiguration($configuration, $configs);
+        $config = $this->processConfiguration($configuration, $configs);
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 
-        foreach (array('services') as $service) {
+        foreach (['services'] as $service) {
             $loader->load(sprintf('%s.xml', $service));
         }
     }

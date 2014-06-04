@@ -61,6 +61,6 @@ class ImageTypeExtension extends AbstractTypeExtension
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setOptional(array('image_path'));
+        $resolver->setOptional(['image_path']);
     }
 }
