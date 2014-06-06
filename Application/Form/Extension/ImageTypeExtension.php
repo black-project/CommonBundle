@@ -22,7 +22,7 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
  *
  * This extension add image option for create a preview near the upload form type
  *
- * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
+ * @author  Alexandre 'pocky' Balmes <alexandre@lablackroom.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class ImageTypeExtension extends AbstractTypeExtension

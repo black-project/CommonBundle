@@ -3,7 +3,7 @@
 /*
  * This file is part of the Black package.
  *
- * (c) Alexandre Balmes <albalmes@gmail.com>
+ * (c) Alexandre Balmes <alexandre@lablackroom.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,7 +20,7 @@ use Symfony\Component\Form\DataTransformerInterface;
  * ValuetoModelsOrNullTransformer transfom/reverse data from collection to an array.
  * It works both with ORM or ODM.
  *
- * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
+ * @author  Alexandre 'pocky' Balmes <alexandre@lablackroom.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class ValuetoModelsOrNullTransformer implements DataTransformerInterface

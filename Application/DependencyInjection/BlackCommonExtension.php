@@ -3,7 +3,7 @@
 /*
  * This file is part of the Black package.
  *
- * (c) Alexandre Balmes <albalmes@gmail.com>
+ * (c) Alexandre Balmes <alexandre@lablackroom.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +23,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  *
- * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
+ * @author  Alexandre 'pocky' Balmes <alexandre@lablackroom.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class BlackCommonExtension extends Extension

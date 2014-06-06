@@ -3,7 +3,7 @@
 /*
  * This file is part of the Black package.
  *
- * (c) Alexandre Balmes <albalmes@gmail.com>
+ * (c) Alexandre Balmes <alexandre@lablackroom.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +21,7 @@ use Black\Bundle\CommonBundle\Application\Form\Transformer\ValuetoModelsOrNullTr
  *
  * CustomChoiceListType create a Choice list
  *
- * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
+ * @author  Alexandre 'pocky' Balmes <alexandre@lablackroom.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class CustomChoiceListType extends AbstractType

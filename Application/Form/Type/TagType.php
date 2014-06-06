@@ -20,7 +20,7 @@ use Symfony\Component\Form\FormBuilderInterface;
  *
  * TagType create a new type for TextToTagTransformer
  *
- * @author  Alexandre 'pocky' Balmes <albalmes@gmail.com>
+ * @author  Alexandre 'pocky' Balmes <alexandre@lablackroom.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
 class TagType extends AbstractType
