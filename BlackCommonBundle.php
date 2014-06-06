@@ -13,6 +13,7 @@ namespace Black\Bundle\CommonBundle;
 
 use Black\Bundle\CommonBundle\Application\DependencyInjection\BlackCommonExtension;
 use Symfony\Component\Console\Application;
+use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -46,18 +47,24 @@ class BlackCommonBundle extends Bundle
         $prefix = $this->getNamespace().'\\Application\\Command';
         foreach ($finder as $file) {
             $ns = $prefix;
+
             if ($relativePath = $file->getRelativePath()) {
                 $ns .= '\\'.strtr($relativePath, '/', '\\');
             }
+
             $class = $ns.'\\'.$file->getBasename('.php');
+
             if ($this->container) {
                 $alias = 'console.command.'.strtolower(str_replace('\\', '_', $class));
                 if ($this->container->has($alias)) {
                     continue;
                 }
             }
+
             $r = new \ReflectionClass($class);
-            if ($r->isSubclassOf('Symfony\\Component\\Console\\Command\\Command') && !$r->isAbstract() && !$r->getConstructor()->getNumberOfRequiredParameters()) {
+
+            if ($r->isSubclassOf('Symfony\\Component\\Console\\Command\\Command') &&
+                !$r->isAbstract() && !$r->getConstructor()->getNumberOfRequiredParameters()) {
                 $application->add($r->newInstance());
             }
         }
