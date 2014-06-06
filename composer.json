@@ -7,8 +7,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Alexandre Balmes",
-            "email": "abalmes@gmail.com"
+            "name": "Alexandre 'pocky' Balmes",
+            "email": "alexandre@lablackroom.com"
         }
     ],
     "minimum-stability": "dev",
@@ -16,18 +16,11 @@
         "php": ">=5.4.0",
         "symfony/framework-bundle": "~2.3",
         "symfony/form": "~2.3",
-        "doctrine/doctrine-bundle": "1.2.*",
-        "jms/security-extra-bundle": "1.5.*",
-        "jms/di-extra-bundle": "1.4.*",
-        "sonata-project/intl-bundle": "2.1.*",
-        "stof/doctrine-extensions-bundle": "1.1.*"
-    },
-    "suggest": {
-        "doctrine/mongodb-odm": "If you want to use MongoDB",
-        "doctrine/mongodb-odm-bundle": "If you want to use MongoDB"
+        "doctrine/doctrine-bundle": "1.2.*"
     },
     "autoload": {
-        "psr-0": { "Black\\Bundle\\CommonBundle": "" }
-    },
-    "target-dir": "Black/Bundle/CommonBundle"
+        "psr-4": {
+            "Black\\Bundle\\CommonBundle\\": ""
+        }
+    }
 }
