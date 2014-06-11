@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Black\Bundle\CommonBundle\Form\Type;
+namespace Black\Bundle\CommonBundle\Application\Form\Type;
 
 use Black\Bundle\CommonBundle\Application\Form\Transformer\TextToTagTransformer;
 use Symfony\Component\Form\AbstractType;
