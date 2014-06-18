@@ -19,13 +19,6 @@ namespace Black\Bundle\CommonBundle\Infrastructure\Doctrine;
 interface ManagerInterface
 {
     /**
-     * Create an object
-     *
-     * @return mixed
-     */
-    public function createInstance();
-
-    /**
      * Return the object manager
      *
      * @return mixed

@@ -38,7 +38,7 @@ abstract class AbstractManager implements ManagerInterface
         $this->manager    = $om;
         $this->repository = $om->getRepository($class);
         $metadata         = $om->getClassMetadata($class);
-        $this->class      = $metadata->name;
+        $this->class      = $metadata->getName();
     }
 
     /**
@@ -63,17 +63,6 @@ abstract class AbstractManager implements ManagerInterface
     public function flush()
     {
         $this->manager->flush();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function createInstance()
-    {
-        $class  = $this->getClass();
-        $object = new $class;
-
-        return $object;
     }
 
     /**
