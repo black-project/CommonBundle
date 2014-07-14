@@ -3,7 +3,7 @@ CommonBundle
 
 A simple CommonBundle with Types, Events, Extension, Transformers and PHP interfaces.
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/cac403b1-eaea-4a6b-92b9-21e4d412c1e5/big.png)](https://insight.sensiolabs.com/projects/cac403b1-eaea-4a6b-92b9-21e4d412c1e5)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/eec93d37-ced3-434d-9b83-dc5537eaca2f/big.png)](https://insight.sensiolabs.com/projects/eec93d37-ced3-434d-9b83-dc5537eaca2f)
 
 Documentation
 -------------
