@@ -28,7 +28,7 @@ class TagTypeTest extends \PHPUnit_Framework_TestCase
 
     public function testSubmitValidData()
     {
-        $formData = 'test,test1';
+        $formData = 'test, test1';
 
         $type = new TagType('tag_type');
         $form = $this->factory->create($type);

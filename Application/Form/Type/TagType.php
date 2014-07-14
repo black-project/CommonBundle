@@ -12,6 +12,7 @@
 namespace Black\Bundle\CommonBundle\Application\Form\Type;
 
 use Black\Bundle\CommonBundle\Application\Form\Transformer\TextToTagTransformer;
+use DTL\Symfony\Form\DataTransformer\ArrayToDelimitedStringTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
@@ -44,7 +45,7 @@ class TagType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $transformer = new TextToTagTransformer();
+        $transformer = new ArrayToDelimitedStringTransformer();
         $builder->addModelTransformer($transformer);
     }
 
