@@ -14,6 +14,8 @@
         <parameter key="black_common.form.event.button.save.class">Black\Bundle\CommonBundle\Form\EventListener\SetSaveButtonSubscriber</parameter>
         <parameter key="black_common.form.event.button.save_and_add.class">Black\Bundle\CommonBundle\Form\EventListener\SetSaveAndAddButtonSubscriber</parameter>
         <parameter key="black_common.form.event.button.reset.class">Black\Bundle\CommonBundle\Form\EventListener\SetResetButtonSubscriber</parameter>
+
+        <parameter key="black_common.infrastructure.command.bus.class">Black\Bundle\CommonBundle\Infrastructure\CQRS\CommandBus</parameter>
     </parameters>
 
     <services>
@@ -29,5 +31,7 @@
         <service id="black_common.form.event.button.save" class="%black_common.form.event.button.save.class%" />
         <service id="black_common.form.event.button.save_and_add" class="%black_common.form.event.button.save_and_add.class%" />
         <service id="black_common.form.event.button.reset" class="%black_common.form.event.button.reset.class%" />
+
+        <service id="black_common.infrastructure.command.bus" class="%black_common.infrastructure.command.bus.class%" />
     </services>
 </container>

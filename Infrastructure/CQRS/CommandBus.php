@@ -28,7 +28,7 @@ final class CommandBus implements CommandBusInterface
     protected $handlers = array();
 
     /**
-     * @param CommandInterface $command
+     * @param $commandClassName
      * @param CommandHandlerInterface $handler
      */
     public function register($commandClassName, CommandHandlerInterface $handler)
@@ -44,6 +44,9 @@ final class CommandBus implements CommandBusInterface
         $this->handlers[get_class($command)]->handle($command);
     }
 
+    /**
+     * @return array
+     */
     public function getHandlers()
     {
         return $this->handlers;
