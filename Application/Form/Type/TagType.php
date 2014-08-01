@@ -11,7 +11,6 @@
 
 namespace Black\Bundle\CommonBundle\Application\Form\Type;
 
-use Black\Bundle\CommonBundle\Application\Form\Transformer\TextToTagTransformer;
 use DTL\Symfony\Form\DataTransformer\ArrayToDelimitedStringTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

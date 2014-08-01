@@ -12,7 +12,6 @@ namespace Black\Bundle\CommonBundle\Infrastructure\CQRS;
 
 use Black\DDD\DDDinPHP\Infrastructure\CQRS\CommandBusInterface;
 use Black\DDD\DDDinPHP\Infrastructure\CQRS\CommandHandlerInterface;
-use Black\DDD\DDDinPHP\Infrastructure\CQRS\CommandInterface;
 
 /**
  * Class Bus
