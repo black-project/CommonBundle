@@ -15,7 +15,7 @@
         <parameter key="black_common.form.event.button.save_and_add.class">Black\Bundle\CommonBundle\Form\EventListener\SetSaveAndAddButtonSubscriber</parameter>
         <parameter key="black_common.form.event.button.reset.class">Black\Bundle\CommonBundle\Form\EventListener\SetResetButtonSubscriber</parameter>
 
-        <parameter key="black_common.infrastructure.command.bus.class">Black\Bundle\CommonBundle\Infrastructure\CQRS\CommandBus</parameter>
+        <parameter key="black_common.infrastructure.command.bus.class">Black\DDD\CQRSinPHP\Infrastructure\CQRS\CommandBus</parameter>
     </parameters>
 
     <services>

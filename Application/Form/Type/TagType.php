@@ -18,7 +18,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 /**
  * Class TagType
  *
- * TagType create a new type for TextToTagTransformer
+ * TagType create a new type based on FormToArrayDelimitedTransformer
  *
  * @author  Alexandre 'pocky' Balmes <alexandre@lablackroom.com>
  * @license http://opensource.org/licenses/mit-license.php MIT

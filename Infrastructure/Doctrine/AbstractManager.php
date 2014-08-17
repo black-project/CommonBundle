@@ -50,7 +50,7 @@ abstract class AbstractManager implements ManagerInterface
     }
 
     /**
-     * @return ObjectRepository
+     * @return ObjectRepository|\Doctrine\Common\Persistence\ObjectRepository|mixed
      */
     public function getRepository()
     {
@@ -58,7 +58,7 @@ abstract class AbstractManager implements ManagerInterface
     }
 
     /**
-     * Flush
+     * @return mixed|void
      */
     public function flush()
     {

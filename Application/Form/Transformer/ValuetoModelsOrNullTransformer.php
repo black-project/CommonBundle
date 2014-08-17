@@ -17,7 +17,7 @@ use Symfony\Component\Form\DataTransformerInterface;
 /**
  * Class ValuetoModelsOrNullTransformer
  *
- * ValuetoModelsOrNullTransformer transfom/reverse data from collection to an array.
+ * ValuetoModelsOrNullTransformer transfom data from collection to an array.
  * It works both with ORM or ODM.
  *
  * @author  Alexandre 'pocky' Balmes <alexandre@lablackroom.com>
