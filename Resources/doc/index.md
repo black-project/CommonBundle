@@ -1,7 +1,7 @@
 Getting Started With BlackCommonBundle
 ======================================
 
-This bundle is a suite of tools for your Symfony project and provides some usefull tools like Traits,
+This bundle is a suite of tools for your Symfony project and provides some usefull tools like
 FormTypes, FormExtensions or DataTransformers.
 
 ## Prerequisites
@@ -24,36 +24,24 @@ For more information about translations, check
 [Symfony documentation](http://symfony.com/doc/current/book/translation.html).
 
 
-## Installation
+Installation
+------------
 
-Installation is very simple and stupid.
+The recomanded way to install CommonBundle is through [Composer][1]:
 
-1. Download BlackCommonBundle using composer
-2. Enable your bundle
-3. Champagne!
-
-### Step 1: Download BlackCommonBundle
-
-Add BlackCommonBundle in your composer.json:
-
-``` js
+```json
 {
     "require": {
-        "black/common-bundle": "~0.2"
+        "black/common-bundle": "@stable"
     }
 }
 ```
 
-Now tell composer to download the bundle by running the command:
+__Protip:__ You should browse the [`black/common-bundle`][2] page to choose a stable version to use, avoid the `@stable`
+ meta constraint.
 
-``` bash
-$ php composer.phar update black/common-bundle
-```
-
-Composer will install the bundles to your project `vendor/black` directory.
-
-### Step 2: Enable your bundles
-
+Usage
+-----
 
 Just load BlackCommonBundle in your AppKernel.
 
@@ -70,10 +58,14 @@ public function registerBundles()
 }
 ```
 
-### Step 3: Champagne!
+Champagne!
+----------
 
 Now that you have completed the basic installation of the BlackCommonBundle you are ready
 to [use it](use.md)!
+
+[1]: http://getcomposer.org/
+[2]: https://packagist.org/packages/black/common-bundle
 
 
 

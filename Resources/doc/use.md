@@ -1,78 +1,29 @@
 How to use this awesome bundle?
 ===============================
 
-## Traits
+Form - EventListener
+--------------------
 
-We provide some Traits based on [schema](http://www.schema.org)
-
-### Thing
-
-`Thing` is the most generic type of item and because he is generic, it's a Trait! :)
-
-#### For Doctrine ORM
-
-```php
-<?php
-
-namespace Acme\Bundle\DemoBundle\Entity;
-
-use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
-use Symfony\Component\Validator\Constraints as Assert;
-use Black\Bundle\CommonBundle\Traits\ThingEntityTrait
-
-class Demo
-{
-    use ThingEntityTrait;
-}
-
-```
-
-#### For Doctrine MongoDB
-
-```php
-<?php
-
-namespace Acme\Bundle\DemoBundle\Document;
-
-use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
-use Gedmo\Mapping\Annotation as Gedmo;
-use Symfony\Component\Validator\Constraints as Assert;
-use Black\Bundle\CommonBundle\Traits\ThingDocumentTrait;
-
-class Demo
-{
-    use ThingDocumentTrait;
-}
-
-```
-
-### PostalAddress, ContactPoint and Image
-
-These Traits are explicit and available for Doctrine ORM and Doctrine MongoDB. If you want to use
-the ImageEntityTrait, don't forget to add the annotation `@ORM\HasLifecycleCallbacks` in your class !
-
-
-### Form - EventListener
-
-#### SetButtonsSubscriber
+__SetButtonsSubscriber__
 
 SetButtonsSubscriber add 3 (or 4 if your object is already persisted) buttons in your FormType. This "trick"
 is a very good way to manage your form by using `$this->form->get('button')->isClicked()`.
 
-If you want to read more about this, just [read this](http://symfony.com/blog/new-in-symfony-2-3-buttons-support-in-forms).
+If you want to read more about this, just [read this][1].
 
 
-### Form - Extension
+Form - Extension
+----------------
 
-#### ImageTypeExtension
+__ImageTypeExtension__
 
-ImageTypeExtension is connected to Image(Document|Entity)Trait and add the `path` next to the image type.
+ImageTypeExtension is just a copy/paste of [this][2]
 
 
-### Form - Type
+Form - Type
+-----------
 
-#### TagType
+__TagType__
 
 TagType is a simple type who extends TextType. He is useful if you want to use a simple widget for
 multiple keywords like tags, meta keywords...
@@ -80,9 +31,10 @@ multiple keywords like tags, meta keywords...
 The TagType use the TextToTagTransformer who implode/explode comma-separated string.
 
 If you want an into the wild application, use the
-[XOXCO jQuery Tags Input](http://xoxco.com/projects/code/tagsinput/) with this type.
+[XOXCO jQuery Tags Input][3] with this type.
 
 ```php
+
 <?php
 
 namespace Acme\Bundle\DemoBundle\Form\Type;
@@ -101,12 +53,29 @@ class DemoType extends AbstractType
         $builder->addType('demo', 'black_common_tag');
     }
 }
+
 ```
 
-### Form - Transformer
+__CustomChoiceListType__
 
-#### TextToTagTransformer
+TODO.
 
-TextToTagTransformer transform an array in a comma-separated text and reverse transform a
-comma-separated text to array. Harray! (This joke is only good with french people).
+Form - Transformer
+------------------
 
+__ValueToChoiceOrTextTransformer__
+
+This transformer add an "other" to the ChoiceList and allow a new value. It's a copy/paste of an answer of Bernhard on
+[StackOverflow][6]
+
+__ValueToModelOrNullTransformer__
+
+This transformer can (reverse)transform values from your database without restriction to a specific entity/document/...
+
+
+[1]: http://symfony.com/blog/new-in-symfony-2-3-buttons-support-in-forms
+[2]: http://symfony.com/doc/current/cookbook/form/create_form_type_extension.html
+[3]: http://xoxco.com/projects/code/tagsinput/
+[4]: http://symfony.com/fr/doc/current/reference/forms/types/entity.html
+[5]: http://api.symfony.com/2.2/Symfony/Component/Form/Extension/Core/ChoiceList/ChoiceListInterface.html
+[6]: http://stackoverflow.com/a/11656057
