@@ -17,8 +17,7 @@
         "symfony/framework-bundle": "~2.3",
         "symfony/form": "~2.3",
         "doctrine/doctrine-bundle": "1.2.*",
-        "black/ddd-php": "1.*",
-        "black/cqrs-php": "1.*",
+        "black/common": "1.*",
         "dantleech/symfony-form-array-to-delimited-string-transformer": "dev-master"
     },
     "autoload": {
