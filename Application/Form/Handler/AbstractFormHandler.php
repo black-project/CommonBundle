@@ -26,8 +26,8 @@ abstract class AbstractFormHandler implements HandlerInterface
     protected $request;
 
     /**
-     * @param FormInterface    $form
-     * @param RequestStack     $requestStack
+     * @param FormInterface $form
+     * @param RequestStack  $requestStack
      */
     public function __construct(
         FormInterface $form,
@@ -60,4 +60,4 @@ abstract class AbstractFormHandler implements HandlerInterface
     {
         return false;
     }
-} 
+}
