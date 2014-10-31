@@ -11,7 +11,7 @@
 
 namespace Black\Bundle\CommonBundle\Application\Form\Transformer;
 
-use Black\Bundle\CommonBundle\Infrastructure\Doctrine\ManagerInterface;
+use Black\Component\Common\Infrastructure\Doctrine\Manager;
 use Symfony\Component\Form\DataTransformerInterface;
 
 /**
@@ -33,9 +33,9 @@ class ValuetoModelsOrNullTransformer implements DataTransformerInterface
     /**
      * Construct the Transformer
      *
-     * @param ManagerInterface $manager
+     * @param Manager $manager
      */
-    public function __construct(ManagerInterface $manager)
+    public function __construct(Manager $manager)
     {
         $this->manager = $manager;
     }
