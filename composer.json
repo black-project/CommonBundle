@@ -18,7 +18,7 @@
         "symfony/form": "~2.3",
         "black/common": "~1",
         "dantleech/symfony-form-array-to-delimited-string-transformer": "~0.1",
-        "rhumsaa/uuid": "2.7.1"
+        "ramsey/uuid": "2.7.1"
     },
     "autoload": {
         "psr-4": {

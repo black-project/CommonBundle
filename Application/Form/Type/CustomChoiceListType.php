@@ -12,7 +12,7 @@
 namespace Black\Bundle\CommonBundle\Application\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\FormBuilderInterface;
 use Black\Bundle\CommonBundle\Application\Form\Transformer\ValuetoModelsOrNullTransformer;
 
@@ -84,7 +84,7 @@ class CustomChoiceListType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(['choice_list' => $this->choiceList]);
     }

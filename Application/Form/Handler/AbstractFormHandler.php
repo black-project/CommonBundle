@@ -43,6 +43,7 @@ abstract class AbstractFormHandler implements HandlerInterface
     public function process()
     {
         if ('POST' === $this->request->getMethod()) {
+
             $this->form->handleRequest($this->request);
 
             if ($this->form->isValid()) {

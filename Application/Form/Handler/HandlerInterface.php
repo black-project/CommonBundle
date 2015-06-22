@@ -18,5 +18,4 @@ namespace Black\Bundle\CommonBundle\Application\Form\Handler;
  */
 interface HandlerInterface
 {
-
 }
