@@ -53,12 +53,4 @@ abstract class AbstractFormHandler implements HandlerInterface
             return $this->stop();
         }
     }
-
-    /**
-     * @return bool
-     */
-    public function stop()
-    {
-        return false;
-    }
 }

@@ -18,4 +18,5 @@ namespace Black\Bundle\CommonBundle\Application\Form\Handler;
  */
 interface HandlerInterface
 {
+    public function process();
 }
