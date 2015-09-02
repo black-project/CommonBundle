@@ -38,7 +38,7 @@ abstract class AbstractFormHandler implements HandlerInterface
     }
 
     /**
-     * @return bool|mixed
+     * @return mixed
      */
     public function process()
     {
@@ -49,8 +49,6 @@ abstract class AbstractFormHandler implements HandlerInterface
             if ($this->form->isValid()) {
                 return $this->form->getData();
             }
-
-            return $this->stop();
         }
     }
 }
